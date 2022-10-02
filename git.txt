@@ -1,0 +1,56 @@
+//creating directory
+mkdir <foldername>
+ls -a
+ls <foldername>
+
+//opens vi editor to edit file
+vi <filename>
+
+//shows the content of the file
+cat <filename>
+
+//remove file
+rm -rf filename
+
+git init
+git status
+//untracked files , files to be committed, modifies files
+git add .
+git add filename
+git commit -m "message"
+
+git restore --staged filename
+git log
+git reset commit-code
+git add .
+git stash		//git files that r not untracked will be stashed
+git stash pop
+git stash clear	//delete git stashed files
+
+git remote add origin copied-link-from-github
+//origin is a variable used for the url
+git remote -v
+git push origin master		//pushes all commited files of branch master(of local)
+//master is the branch of github
+git branch branchname
+git checkout branchname	//head on this branchname now
+git merge branchname
+
+//using fork
+git clone url-name
+git remote add upstream url-name	//url of original repository
+git branch branchname		//use your name
+
+//1 branch only allow 1 pull request
+git push origin kunal -f		//force push
+git fetch --all -prune		//prone for deleted ones 
+git reset --hard upstream/main
+git pull upstream main
+
+//change commit message of last commit that has not beed pushed to remote repository
+git commit --amend -m <New commit message>
+
+//change commit message of any commit
+git rebase -i <commit-code>
+//then change work 'pick' to 'reword' for commit messages that needed to be modified
+//sepate editor for each commit message will open
