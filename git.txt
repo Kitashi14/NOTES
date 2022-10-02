@@ -21,6 +21,8 @@ git commit -m "message"
 
 git restore --staged filename
 git log
+git log -n <number of commits to show>
+git log --all --oneline --decorate --graph 
 git reset commit-code
 git add .
 git stash		//git files that r not untracked will be stashed
