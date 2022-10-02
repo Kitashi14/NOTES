@@ -1,0 +1,37 @@
+To-do list {
+
+    Matlab
+    Proteus
+    OpenCV
+    Python
+    Arduino 
+
+    DataBase Management
+    MySQL
+    MongoDB
+
+    OS
+    Linux
+
+    Networking 
+    Hacking
+
+    AMV editing
+    Color grading
+}
+
+
+Doing/Done {
+
+    WebD
+    React
+    JavaScript
+    Backend
+
+    OOPs
+    git
+}
+
+
+
+
