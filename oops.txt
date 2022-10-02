@@ -1,0 +1,292 @@
+New keywords{
+
+
+}
+
+why oops{
+
+    earlier we were using procedural programming, which has many demerits;
+    {
+        only suitable for small programme;
+        had to write similar code again and again;
+    }
+    instead we used modular programming;
+    {
+        in this we devide the procedural programme into functions and each function have a clear purpose;
+        it helps in writing reusable codes;
+    }
+    but it was hard to relate modular programming with real world and had demerits{
+
+        in modular programming the data/variable was alive only in the module;
+        we needing some data to be alive outside the module, for this we needed global variable;
+      
+        but creating global variable is not very good{
+            
+            for data declared as global in modular programming can be accessed from anywhere in the programme;
+            which is harmful for data that are of very high importance;
+            it also created a mess as the no. of global data and functions increased as it was difficult to know which function was interacting with which global data;
+        }
+        so in large project it was difficult to conceptualise and to modify the programme;
+        
+        the root cause was the the data and functions were seperate;
+
+    }
+    in oops we bind the data and functions that uses the data into a class, and this method is known as encapsulation;
+    it helps in creating a lay out/blueprint for our programme;
+    with the help of this blueprint we can create objects;
+    an object is relateble to real world;
+    it also helps in understanding the whole programme and modifying it more easily;
+
+    it has functionality like inheritance, polymorphism, encapsulation, abstraction;
+
+    property like encapsulation and abstraction help us to keep our important private data to be safe, hidden and out of reach to other class and functions, it also helps to hide the internal implementation details and provide directly the member functions to be used;
+}
+
+procedural programming{
+
+    it is a list of instruction in a single block;
+    suitable for small programme;
+}
+
+modular programming{
+
+    in this we devide the procedural programme into functions and each function have a clear purpose;
+    it helps in writing reusable codes;
+    suitable for writing large programms with the help of functions;
+}
+
+OOP{
+
+    object oriented programming;
+    
+    in this we first create a class;
+    this class is used to create objects;
+    these objects have their own data and methods to be used on that data;
+
+    it has 4 pillars known as polymorphism, abstraction, encapsulation and inheritance;
+    somtimes class and object are also considered as pillars so 6 pillars;
+
+    it also has a concept of access specifier to implement data hiding;
+}
+
+class{
+    
+    it is a used defined data-type;
+    we generally capitalise the first letter of a class name; 
+
+    class is like a blueprint for the objects to be created with it;
+    a class consists of data members/member variables;
+    it also consists of member functions to be used on that data members, it is also known as methods;
+
+    it helps in code reusability;
+
+    a class doesn't occupy any space in ram;
+}
+
+data-types{
+
+    all variables used data-type during declaration to restrict the type of data to be stored;
+    whenever a variable is declared some memory for that variable based on the data type with which it is declared is allocated;
+
+    3 data-types{
+
+        primary{
+            built-in and predefines data-type;
+
+            eg. integer, character, boolean, floating point, etc;
+        }
+
+        derived{
+            derived from primary data-type;
+
+            eg. array, function, pointer,etc;
+        }
+
+        user-defined{
+            also called abstract data type;
+            these are defined by users;
+
+            eg. class, structure, union,etc;    
+        }
+    }
+    https://www.geeksforgeeks.org/c-data-types/
+}
+
+object{
+
+    an object is an instance of a class;
+    these are the basic run-time entities of an object oriented system;
+    they represents items that the programme had to handle;
+
+    it can be defined as data members that has unique values and behaiviour;
+
+    an object has many methods associated with it which was defined in its class, a developer can use this methods directly without caring about the logic behind it;
+   
+    these sure occupy some space on ram;
+    each time we create an object it takes memory space for only its member variables;
+    member function takes space for only the first time an object is created and is shared by all other objects;
+}
+
+instance{
+
+    any time a new context is created based on some model, it is said that the model has been instantiated;
+
+    an instance have same data structure as other instances of that model but seperate data with other instances;
+
+}
+
+access specifier{
+
+    somtimes also called access modifiers;
+
+    while defining the class we also define the accessibility of different data members and member functions;
+    it is done with the help of access specifier;
+    it is used to implement data hiding in oops, it provide an extra layer of security;
+
+    there the 3 different type of access specifier in cpp{
+
+        private{
+            the member of the class can be accesed within the class only;
+            other member function of the same class can access their members;
+            but other classes and functions don't have any access to it;
+        }
+        public{
+            the members can be accesed outside the class;
+            the data members and member functions declared as public can be accessed by other classes and functions too;
+        }
+        protected{
+            it is similar to private acceses specifier;
+            difference is that the derived class can access members that are declared as protected;
+        }
+    }
+
+    by default the access specifier is set to private in cpp;
+
+    https://www.geeksforgeeks.org/access-modifiers-in-c/
+}
+
+4 pillars{
+
+    encapsulation{
+        wrapping up variables and methods in class;
+        it helps in data hiding;
+    }
+
+    polymorphism{
+        having many forms;
+        in class method may behave differently, depending on the inputs(function overloading);
+    }
+    
+    inheritance{
+        a class can inherit property on another class;
+        the class inheriting is called derived/child class;
+        the class being inherited is called base/parent class;
+    }
+
+    abstraction{
+        means hiding complicted things from user;
+        a user can use a method directly without caring about the logic behind it; 
+    }
+}
+
+
+constructor{
+
+    with the help of constructor function we can directly set the member variable without using any seperate function for it at the time of creation of object;
+    it helps in reducing the unwanted function call and reducing the length of the code;
+
+    why constructor{
+
+        programmer may forget to initialize data members after creating an object;
+        without initialization the data members will contain garbage value which is very dangerous;
+
+        when there are many object then without constructor it will with a clumsy work to initialize every object seperately;
+
+    }
+
+    constructor name is same as class name;
+    it doesn't have any return type;
+
+    it is called everytime an object is created;
+
+    types of constructor{
+
+        non-parametrized constructor{
+
+            works as default constructor;
+            defining a constructor without any need of parameters;
+            set same defined value to member variables of every object;
+        }
+
+        parametrized constructor{
+
+            defining a constructor with parameters included;
+            set value to data members according to the provided arguments to the constructor;
+        }
+
+        default constructor{
+            
+            when no constructor is defined;
+            compile uses default constructor to assign memory space to member variables;
+            data members contains garbage value;
+        }
+
+        copy constructor{
+
+            in this we pass a previously created object as parameter(by reference) to the constructor function;
+            it copies the object with same value but have differnt address;
+
+        overloaded constructor{
+
+            combining the non-parametrized and parametrized constructor;
+        }
+    }
+
+    if any type of constructor is defined then its compulsory to define a default constructor (using non-parametrized or overloaded constructor)
+}
+
+Methods{
+
+    the different functions present in a class are called methods;
+    also known as member functions;
+
+    these functions can be declared inside the class without any defination;
+    and then we can define the function seperately with specific syntax;
+}
+
+Operator overloading{
+
+    to make Operators(+,-,*,/) work for user-defined data types like class and structures is called operator overloading;
+
+    have a specific syntax{
+
+        return_type Operator_sign (argument will be the one that is written after the operator when using the operator with an object){
+
+            //body of the function
+        }
+    }
+
+    we use 'int' as an argument to differentiate post-increment operator overloading with pre-increment operator overloading;
+}
+
+Inheritance{
+
+    inheriting the properties of another class; 
+    its a mechanism in which one class acquires the property of another class;
+    the class acquiring the property is called child/derived class;
+    the class from which the properties are inherited is called parent/base class;
+
+    why{
+        with the help of inhetitance we can inherit the properties of other classes without defining the properties again and again for classes with same properties;
+
+        makes modifying previous classes or adding new features a lot easier;
+
+        reduce duplicate code;
+        code reuse;
+        better organization of code;
+    }
+
+    base class is a base model for derived class;
+    it consists for basic data members and functions required by every different derived classes;
+    eg. 'animal' class for different animals( 'cat', 'dog', etc. );
+}
