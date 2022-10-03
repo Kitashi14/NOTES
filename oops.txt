@@ -3,6 +3,19 @@ New keywords{
 
 }
 
+Notes{
+
+    constructor and destructor should always be accesible i.e. should always be public;
+
+    when derived class constructor/destructor is called then base class constructor/destructor function is also called;
+
+    virtual keyword only works when the function is overrided otherwise throws error;
+
+    virtual keyword not allowed for constructor;
+
+    if we don't make base class destructor function virtual then only base class part is destroyed and derived part is not destroyed; 
+}
+
 why oops{
 
     earlier we were using procedural programming, which has many demerits;
@@ -277,7 +290,7 @@ Inheritance{
     the class from which the properties are inherited is called parent/base class;
 
     why{
-        with the help of inhetitance we can inherit the properties of other classes without defining the properties again and again for classes with same properties;
+        with the help of inheritance we can inherit the properties of other classes without redefining them from the scratch;
 
         makes modifying previous classes or adding new features a lot easier;
 
@@ -289,4 +302,143 @@ Inheritance{
     base class is a base model for derived class;
     it consists for basic data members and functions required by every different derived classes;
     eg. 'animal' class for different animals( 'cat', 'dog', etc. );
+
+    Constructor and Inheritance{
+
+        if we don't specify a constructor in derived class, then derived class will use appropriate constructor from base class (can only use default constructor of base class)
+        if we try to call the parametrized constructor of base class then it will give error;
+
+        if we specify both the default and parametrized constructor in derived class, then derived class will first call the default constructor of base class then only the appropriate constructor of derived class;
+
+        for derived class to call parametrized constructor of base class while calling parametrized constructor of derived class there is specific syntax for it;
+
+        return_type Dclass(data_type a) : Bclass(a){
+            //derived class parametrized constructor functionality
+        }
+    }
 }
+
+Overriding Member function {
+
+    when we redefine functionality of base class function into derived class then its called overriding;
+    in this case the derived class version(recent version) of function will be called;
+
+    for explicitly calling base class version ing derived class version we can use specific syntax;
+
+    return_type Dclass_func(data_type a){
+        //derived class functionality
+        Bclass:: Bclass_func(a);
+    }
+}
+
+Relationships{
+
+    isA relationship{
+
+        in this relationship we use inheritance;
+
+        as we don't want to create a class from the scratch;
+        we just inherit all the properties from previous classes;
+
+        it is static binding i.e. it decides on compile-time that which class is going to inherit which class;
+
+        it is used when almost all features of base class is matching with derived class;
+
+    }
+
+    hasA relationship{
+
+        in this we use object;
+
+        we take required properties from different base classes without exposing all the publix properties of base class in derived class;  
+
+        it is dynamic/late binding i.e. it decided on run-time that which derived class is going to use what features of which base class;
+
+        it is use when few features are required from base class;      
+    }
+}
+
+Ways of Inheritance{
+
+    public{
+
+        public is inherited as public;
+        protected is inherited as protected;
+    }
+
+    protected{
+
+        both public and protected is inherited as protected
+    }
+}
+
+Polymorphism{
+
+    Base class pointer and Derived class object{
+
+        Base* ptr = new Derived();
+
+        this will not show any error;
+        but this base class pointer can acceses features of base class only;
+
+        it is helpful as a single pointer of base class can be used to point any of the derived class;
+        
+        ptr->Base_func()    //will not show error
+        ptr->Derived_func()  //will throw error
+    }
+
+    Virtual function{
+        
+        functions existing in class but can't be used are called virtual function;
+
+        its a type of overloading(run-time);
+        we use keyword 'virtual' for virtual function;
+
+        they appear to be calling a function of one class but in reality may be calling a function of different class;
+
+        why{
+
+            when we use base pointer for derived class then for using overrided function of different derived class we can make the base class function a virtual function as base pointer will normally call base class function;
+        }
+
+        it is late/dynamic binding i.e. at run-time compiler comes to know which class is pointed by pointer(ptr), then appropriate function would be called;
+    }
+
+
+    Abstract class{
+
+        an abstract class is used when we never want to instantiate object of parent class;
+
+        for making a parent class abstract we use pure virtual function;
+
+        //syntax for pure virtual function
+        virtual return_type Base_func() = 0;
+
+        a class with a pure virutal function is an abstract class;
+
+        the purpose of an abstract class is to only act as an parent and don't have any object of itself; 
+    }
+
+    Types of polymorphism{
+
+        Compile-time polymorphism{
+
+            Operator Overloading;
+            Function Overloading;
+        }
+
+        Run-time polymorphism{
+
+            Virtual Function;
+            Function Overriding;
+        }
+    }
+
+    Virtual Destructor{
+
+        if we don't make base class destructor function virtual then only base class part is destroyed and derived part is not destroyed; 
+
+        so if we want to destroy our whole object then we need to make our base class destructor a virtual destructor;
+    }
+}
+
