@@ -1,6 +1,6 @@
 New keywords{
 
-
+    scope resolution operator;
 }
 
 Notes{
@@ -440,5 +440,40 @@ Polymorphism{
 
         so if we want to destroy our whole object then we need to make our base class destructor a virtual destructor;
     }
+}
+
+Friend Function and Classes{
+
+    friend function/class have access to all properties of a class(whether its public, protected or private);
+
+    friend function/class of class is declared in its class body in public field; 
+    //syntax
+    friend return_type function_name();
+
+    its only present in C++;
+    no other language supports friend functionality;
+
+    it is believed that friend functionality violates the basic idea of oops that is encapsulation;
+    but cpp developer believed that developers should have full control so they created this functionality;
+
+    it helps in connecting 2 or more classes as a friend function/class can be friends of many classes;
+}
+
+Static Members and Static Member Functions{
+
+    normally each object will create create seperate copy of itself in memory;
+
+    a static member doesn't take seperate space it only occupies space only once like member function;
+
+    static member is shared by all object;
+
+    a static member belongs to class not particular object;
+
+    
+    a static member function can only access static member variable;
+    but we can access static member from any other member function;
+
+    a static member function is present in a class and for the class;
+    
 }
 
