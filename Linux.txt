@@ -1,0 +1,92 @@
+NEW KEYWORD{
+
+    mingW
+}
+
+Terminal emulator{
+
+    A terminal emulator is a software application that replicates the functionalities of classic computer terminals;
+    it allows a host computer to access another computer, including remote ones, through either a command-line interface or a graphical one;
+    the two systems need not be running the same operating system;
+
+    when computers were connected with each other, one could access another computer from the terminal they were sitting in front of, without having to walk to the terminal of the other computer. This was not an easy task, because the first computer had to act, as if it were the terminal of the second computer by sending the same signals over the cable, that the real terminal would send. So they wrote programs to do that, that were called terminal emulator;
+
+}
+
+Terminal{
+
+    it is a text input and output environment;
+    it is a program that acts as a wrapper and allows us to enter commands that the computer processes;
+}
+
+console{
+
+
+}
+
+
+shell{
+
+    a command line interpreter which is run on login and interprets your input; 
+    examples of this are bash/zsh;
+}
+
+https://www.alibabacloud.com/blog/what-is-the-difference-between-shell-console-and-terminal_598625 
+
+Command Prompt{
+
+
+}
+
+environmental variables{
+
+}
+
+path environmental variables{
+
+
+}
+
+bash files{
+
+
+}
+
+commands{
+
+    ls{
+        list;
+
+        ls      //list all files excluding hidden files present in the directory;
+        ls -a   // list all files even if they are hidden;
+    }
+
+    cd{
+        change directory;
+
+        cd ..   // goes to previous directory;
+        cd      // goes to home directory;
+        cd <path>       // goes to mentioned path directory;  
+
+    }
+
+    where{
+
+        where <command>    // shows the path where the executable file of the command is located;
+    }
+
+    echo{
+
+        echo means display;
+
+        echo $PATH      // shows all the path environmental variables;
+    }
+
+    cat{
+
+        concatenate -> to link things together;
+
+        cat <file>      // shows the contents of the file; 
+    }
+
+}
