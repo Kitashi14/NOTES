@@ -1,0 +1,981 @@
+NEW KEYWORDS {
+
+    Unix Timestamp (jan 01 1970);
+    followgram incident of accessing private API;
+    internetlivestats.com;
+
+    boilerplate;
+
+    hidden inputs; 
+    FTP Request;
+    CLI ofc command line interface;
+
+    DNS root server;
+    https://securitytrails.com/blog/dns-root-servers#%3A~%3Atext%3DRoot%20servers%2C%20or%20DNS%20root%2Cdomain%20names%20into%20IP%20addresses;
+
+    ORM;
+}
+
+NOTE{
+
+    Good practices in WebD : https://visualobjects.com/web-development/blog/web-development-best-practices
+    server : https://www.techtarget.com/whatis/definition/server
+
+}
+
+using node js {
+    https://securitytrails.com/blog/dns-root-servers#%3A~%3Atext%3DRoot%20servers%2C%20or%20DNS%20root%2Cdomain%20names%20into%20IP%20addresses;
+
+    its a JavaScript run-time environment(like browser);
+    it uses JS engine developed by google : V8 engine (also used in chrome, supports JS ES6);
+
+    previously we can run javascript only inside the browser,
+    it limits us to access stuff from outside our browser which is justified to protect us from some malicious websites,
+    but sometimes we want to use javascript outside our browser,
+
+    node js allow us to run javascript outside our browser and to interect directly to our hardware,
+    we can make application and stuff using javascript in our computer using nodejs,
+
+    we can also run in some other devices and access it through browser by setting servers;
+
+    REPL {
+        read evalution print loop
+
+        command{
+            node
+        }
+
+        allows to execute statements and expression inside command line,
+        just like console of the browser;
+    }
+}
+
+
+node api documentation{
+
+    nodejs.org/api;
+
+    for using an api/module in our code we have to use require method;
+
+    example{
+        fs module{
+            no need to install as its a built-in module;
+            just require it;
+
+            code{
+
+                const variableName = require("moduleName");
+            }
+        }
+    }
+
+    using npm to install and use native module;
+    www.npmjs.com  //for native module;
+}
+
+require{
+
+    its a method to extract/import modules;
+    eg. require('express');
+
+    it is based on CJS format;
+    other method : using 'import' if it supports ESM format;
+}
+
+CJS{
+
+    CommonJavaScript; 
+    its a module formatting system;
+    a standard for organising JS code;
+    it is made for using JS outside browser;
+    its the original way of packaging JS code for NodeJS;
+
+    other formatting system : ESM;
+}
+
+ESM{
+
+    ECMAScript Module;
+    its also a module formatting system;
+    its the OFFICIAL standard format for packaging JS code;
+    its the format used by the JS for browser and also been adapted by many platform for packaging their codes;
+    NodeJS also now supports ESM with CJS;
+}
+
+npm{
+
+    Node package manager ;
+     
+    as the name says its for managing packages in nodejs projects;
+    npmjs.com hosts 1000s of free packages/modules for use;
+
+    npm comes installed with nodejs and can be used after installing nodejs;
+
+    commands{
+
+        npm --version //for knowing the version of npm installed;
+        npm i <moduleName> //for installing latest version;
+        npm i <moduleName>@<versionNumber>  //for installing specific version;
+        npm i -g <moduleName> //for installing a module globally(installs for the sys rather than the specific dir);
+        npm uninstall <moduleName> 
+        npm view <moduleName> version  //for knowing the available latest version of the module;
+        npm list //for viewing all the dependencies of the dir;
+        npm list --depth=0  //for viewing the top level dependencies;
+        npm list <moduleName> //for viewing the version of the moduleName installed;
+    
+        }
+
+}
+
+express{
+
+    a framwork similar concept as of using jquery for writing js code;
+    its a framwork for writing less nodejs code;
+    it is mainly used to create restfulAPI;
+
+    its a native module not a built-in one;
+
+    expressjs.com;
+}
+
+creating server/project{
+
+    command{
+        //node should be installed
+
+        touch server.js  
+        npm init //for initializing the project;
+        npm install express //install and add express in dependencies inside package.json file;   
+        node server.js
+    }
+
+    creating 'app' variable to represent express function; 
+    
+    "/" root of a website;
+}
+
+'app' var{
+    it is a generalized way to/of representing express function in node server;
+}
+
+nodemon{
+
+    a utility that will monitor for any changes in our source code and automatically restart our server;
+    help us for avoiding repeatedly and tiring process of restarting our server again and again whenever we make some changes;
+
+    command{
+        npm install -g nodemon //-g for installing it globally;
+    }
+}
+
+API {
+
+    application programming interface;
+
+    it is a set of commands, functions, protocols and objects that programmers can use to create software or interact with an external system;
+
+    it provides developers with standard commands for performing common operations so they do not have to write the code from the scratch;
+
+    example{
+
+        jQuery API;
+    }
+
+    the API that we generally use in our webD is to interact to external system;
+
+    private API : only accessable to the admins internally;
+    these are not documented;
+
+    endPoint : complete API url;
+
+    using cURL;
+
+    any-api.com;
+}
+
+URL {
+    uniform resource locator;
+
+    it tells web browser how and where to retrieve a resource;
+
+
+    it is composed of {
+
+        protocol{
+            http, https;
+        }
+        domain name{
+            www.websitename.com , www.websitename.org;
+        }
+        relative path to be loaded aka subdirectories{
+            /home, /login ;
+        }
+    }
+}
+
+web vs internet {
+
+    The world wide web, or web are the pages you see when you're at a device and you're online;
+    The internet is the network of connected computers that the web works on;
+
+    web is a part of internet (it works on net);
+
+    internet is global network of networks;
+    
+}
+
+
+network protocols { 
+    https://www.geeksforgeeks.org/types-of-network-protocols-and-their-uses/ 
+
+    communication{
+        http, tcp, udp, bgp, arp, ip, dhcp, etc.
+    }
+
+    management{
+        icmp, snmp, gopher, ftp, pop3, telnet, etc.
+    }
+
+    security{
+        https, ssl, tsl, etc.
+    }
+    
+}
+
+SSH {
+
+    SSH or Secure Shell is a network communication protocol that enables two computers to communicate;
+
+    SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding TCP ports and X11 connections; 
+    it can transfer files using the associated SSH file transfer (SFTP) or secure copy (SCP) protocols. SSH uses the client–server model.
+
+    SSH uses TCP, not UDP (User Datagram Protocol).
+}
+
+http { 
+    hypertext transfer protocol;
+
+    communication protocol;
+    web server and client communicate using http;
+    its a synchronous protocol;
+    uses port 80;
+
+    protocol for fetching/transferring resources/data like HTML doc, files, media etc. (hypermedia);
+    http request and response is used to exchange information between web server and client; 
+
+    when a http url is directly fetched then it acts as a get method by default;
+    different methods helps us to use same endpoints for different request;
+
+}
+
+port{
+
+     a port is a number assigned to :
+        uniquely identify a connection endpoint and to direct data to a specific service;
+        in OS, its to identify a specific process or a type of network service;
+    
+    Ports are numbered and used as global standards to identify specific processes or types of network services;
+    https://www.quora.com/What-is-the-difference-between-port-and-port-number
+}
+
+https{
+
+    Secure Hypertext Transfer Protocol;
+    security protocol;
+
+    secure version of http;
+    HTTPS runs on top of the lower layer SSL(Secure Sockets Layer) protocol;
+    also refered as HTTP over SSL or HTTP over TLS;
+    uses port 443 aka TCP port 443(as its connected to TCP protocol);
+
+
+    one need to have a SSL certificate from CA to use https for its server/domain;
+    one can use a self signed certificate but it will be vulnerable to man-in-middle attack;
+    browser comes installed with public key of major CAs;
+
+    https://stackoverflow.com/questions/188266/how-are-ssl-certificates-verified
+
+
+
+    like http it is also used to communicate between server and client but with security;
+    its also synchronous protocol;
+
+    same work as http with encryption;
+    SSL and its more secure verion TLS(Transfer Layer Security) use digital certificates and robust encryption algorithms to encrypt data;
+
+    https://stackoverflow.com/questions/13121590/steps-to-send-a-https-request-to-a-rest-service-in-node-js
+}
+
+TCP {
+    Transmission Control Protocol;
+    its a communication protocol;
+    a global communication standard that devices used to transmit data;
+    
+    its a connection oriented protocol(i.e. both client and server has to be establish a connection first before sending data); 
+
+    one of the main protocols of the internet-protocol-suite(TCP/IP) in the transport layer other than UDP(User Datagram Protocol);
+    https://www.geeksforgeeks.org/tcp-ip-model/
+
+    retransmission of lost data packets is only possible with TCP;
+    https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
+
+    TCP ports{
+
+        as per research tcp port is same as port(the network related one);
+        its a 16-bit binary number;
+        types of ports{
+            well known;(0-1023)
+            registered ports;(1024-49,151)
+            dynamics or say private port;(49,152-65,535)
+        }
+    }
+
+    https://www.cbtnuggets.com/blog/technology/networking/what-is-a-tcp-port-and-why-they-are-important
+    
+}
+
+Datagram{
+
+    its a unit/packet of data consisting of a header which have enough information to enable any switch to decide how to get it to its destination;
+    very packet contains the complete destination address;
+
+    its used in datagram network which is often called connectionless network;
+    in datagram network there is no handshake and every switch decides where the datagram will head to using forwarding table(aka routing table);
+
+    when the network becomes large and complex then its diffucult to create forwarding table, its then that we use the method called routing;
+    routing is a process that takes place in the background so that, when a data packet turns up, we will have the right information in the forwarding table to be able to forward, or switch, the packet;
+
+    UDP(User Datagram Protocol) is used for this network;
+
+    https://www.sciencedirect.com/topics/computer-science/datagram-network
+
+}
+
+
+
+public vs private key {
+
+    public key is for decrypting a data;
+    private key is for encrypting  a data;
+    or can be opposite or combination of both;
+}
+
+SSL {
+    Secure Sockets Layer;
+
+    its a network security protocol;
+    allows for server to server and server to client connections;
+
+    all data transfered through SSL is encrypted;
+
+    SSL certificates are required by domains for using HTTPS protocol;
+
+    types of SSL certificates{
+
+        standard certificate : can be used for only a single domain (don't work with multiple subdomains);
+
+        wild card certificate : work for single domain but same certificate can be used for different subdomains;
+
+        multi domain certificate : work for multiple domains (for the listed domain names);
+
+        signed/unsigned(self-signed) certificate : signed certificate are provided by a CA (confirms the connection is with the right server);
+    }
+
+    in older services a single IP can be binded with a single SSL certificate;
+    in present service single IP can have multi SSL for different domain names with the help of SNI (shared hosting);
+
+    https://serverfault.com/questions/566426/does-each-subdomain-need-its-own-ssl-certificate
+
+}
+
+SNI {
+    Server Name Indication;
+
+    its an extension of TLS protocol;
+    it allows client to indicate which hostname its trying to connect so that if a server is performing share hosting it can set the right connection and send the right certificate;
+    it allows server to present multiple certificate on the same IP address;
+}
+
+TLS {
+    Transport Layer Security;
+
+    its a security protocol;
+    its can be said as a more secure version of SSL;
+}
+
+CA {
+    Certificate authority;  
+    eg. GoDaddy, Verisign, etc. 
+
+    it is a trusted entity which issues signed SSL certificates;
+
+    these digital certificates are data files used to cryptographically link an entity with a public key, Web browsers use them to authenticate content sent from web servers;
+
+    common use for certificate authorities is to sign certificates used in HTTPS;
+    another common use is in issuing identity cards by national governments for use in electronically signing documents;
+
+}
+
+http vs https{
+
+    http is a communication protocol which basically tell the format for communication;
+    https is communication with http rule but with encryption for security thus its a security protocol;
+
+    http connection doesn't requies a SSL certificate;
+    https connection requies web server/domain to have a SSL certificate;
+
+    data can be sent with or without the use of SSL, one way to indicate a secure connection is by the port number. By default, HTTPS connections use TCP port 443. HTTP, the unsecure protocol, uses port 80;
+
+    https://www.smashingmagazine.com/2017/06/guide-switching-http-https/
+
+}
+
+host name{
+
+    host name is used for any device connected to a computer network
+    which has a specific ip address;
+    used to distinguish one device from another on the web;
+    all host name are domain name but not vice versa;
+    
+    eg. server1.example.com, PC123;
+}
+
+domain name{
+
+    domain name is for a website;
+    it is normally used so that we don't have to remember the ip address for each website;
+    eg. facebook.com, microsoft.com;
+
+    a domain name normally point to an IP address(A record) but can point to another domain(CNAME record);
+    eg. gmail.com point to mail.google.com
+    DNS is used to map a domain to its data(IPaddress, another hostname, etc.);
+    
+    2 different domain may have same ip address(web page for both on same server)
+    this is called shared hosting(to send the requested web page it checks the hostname)
+    eg. superuser.com and stackoverflow.com;
+    
+    shared hosting:  This is possible because when a web browser requests a resource from a web server using HTTP/1.1 
+    it includes the requested hostname as part of the request. The server uses this information to determine which web site to show the user;
+
+    https://superuser.com/questions/577070/is-it-possible-for-many-domain-names-to-share-one-ip-address
+
+}
+
+shared hosting vs VPS{
+
+    in shared hosting a single server host multiple domains same ip address (uses domain name to determine differentiate requests);
+    in shared hosting all things are shared (OS, resources, RAM, bandwidth, disk space, IP address, etc.);
+
+    in VPS(virtual private server) a single server is devided into multiple private servers virtually(each vps has their own ip address dedicated to it);
+    in VPS each domain get their own OS, resources, RAM, bandwidth, etc.;
+}
+
+DNS{
+
+    domain name system;
+
+    a naming database to map a domain name to its ip address or any other data the domain is pointing to;
+
+    path{
+
+        browser -> isp (connects to DNS) -> DNS resolver -> root server (tells about place to fetch according to given TLD) -> DNS resolver -> TLD NS (tells about place to fetch according to given domain) -> DNS resolver -> Authoritative Name Server (tells about the type of record and the data associated with it ) -> DNS resolver -> ISP -> browser 
+    }
+
+    https://www.youtube.com/watch?v=g6R9gRWIIK8&t=169s&ab_channel=TheCloudGirl 
+    https://securitytrails.com/blog/dns-root-servers#%3A~%3Atext%3DRoot%20servers%2C%20or%20DNS%20root%2Cdomain%20names%20into%20IP%20addresses.
+}
+
+multiple ip address may point to same server or say a device can have multiple ip addresses;
+
+ip address {
+
+    internet protocol address;
+
+    unique address that identifies a device on the internet or a local network;
+    
+    in case of hostname, ip address of the particular device in the computer network is pointed;
+    ip is used to tell the destination;
+    
+    in case of domain name, ip address of the web server(a device) 
+    who stores the data/webpage for that site is pointed;
+    
+    multiple domain name may have same ip address when the same server is
+    storing/hosting data/webpages of different sites, this is called shared hosting;
+
+    https://superuser.com/questions/577070/is-it-possible-for-many-domain-names-to-share-one-ip-address
+
+}
+
+vpn vs proxy{
+
+    they are intermediate server between client and origin server 
+    just like servers(proxy server) used for caching in CDN (Content Delivery Network)
+
+    vpn {
+        virtual private network;
+        user sent request vpn server;
+
+        it hides your ip address as well as your web activity;
+        it is used for all apps and sites simultaneously;
+
+        can be used to bypass proxy server to access restricted sites;
+    }
+
+    proxy{
+        user send request proxy server; 
+
+        it hides your ip address but doesn't hide your web activity;
+        it can be used to restrict user to access certain websites;
+        it is only used for 1 app or site at a time;
+
+        software like proxifier can be used to use proxy like vpn;
+    }
+}
+
+subdomain{
+
+    eg. www.xyx.com, blog.xyx.com are subdomain for domain xyx.com;
+
+    it is an additional part with the main domain name;
+    help to organize and navigate different sections of your website;
+
+    subdomain can be treated as a completly different domain in terms of its use;
+    we don't need to buy different subdomains(only a main domain is needed to be purchased);
+
+    usage example{
+
+        creating a testing version of the site;
+        seperate domain for handling transaction;
+        different subdomain for different group of users like guest.xyz or user.xyz;
+    }
+
+    subdomain vs subdirectories{
+
+        search engines view different subdomain as different sites;
+        opposite case with subdirectories;
+
+        using subdirectories will get a more link juise than using subdomain;
+
+        subdirectories don't have their own DNS record;
+        subdomain have their own DNS record;
+
+        subdirectories are hosted on same server;
+        subdomain can be hosted on different servers(using DNS record to set different A name for different subdomain);
+        
+    }
+
+    a domain may or may not have a default subdomain;
+    a subdomain may point to an ip address(A record) or to another domain(CNAME record);
+    
+}
+
+search engine vs directory;
+hyperlink(link) vs url;
+
+TLD {
+    top level domain;
+    also called extension domain;
+    final component of a domain name;
+    eg .org, .com;
+
+    having different TLD is like having different domain(have to pay for every TLD seperately and will have different root directory and dns record );
+}
+
+SLD{
+    second level domain;
+    eg. facebook in facebook.com;
+}
+
+cURL {
+
+    client for url;
+
+    it deals with internet protocols like http, ftp, smtp, telnet ans so on(check version);
+
+    it can be used for making http/https request from command line;
+    it is available in linux, windows, macOS and all;
+
+    command{
+
+        curl --version
+        curl -- help
+        curl <URL> 
+        curl --output <file name> <URL> 
+    }
+
+
+    for https request{
+
+        curl verifies the SSL certificate of the target URL from local CA certificate store (which comes with the curl installation);
+        if a certificate is expired, faulty or self signed then curl returns error; 
+
+        https://reqbin.com/req/c-lfozgltr/curl-https-request
+    }
+
+    for powershell instead of curl(which is also available) one can use Invoke-WebRequest; 
+
+    https://adityasridhar.com/posts/how-to-easily-use-curl-for-http-requests
+}
+
+request module{
+
+    its a native npm module;
+    it is used to make http/https request inside nodejs;
+    
+    nodejs has built in modules 'http' and 'https' for making http and https request resp;
+
+    its a module which makes writing code for http/s requests very easy, by writing very less code;
+    its just a wrapper around the build in 'http'/'https' module of nodejs;
+
+    other native modules for making http/s request are : axios, superagent, node-fetch, needle; 
+
+    DEMERIT : it doesn't returns promise rather we have to use callback functions to use it; 
+    USE : request-promise module with request module;
+}
+
+node-fetch module{
+    
+    its also a native npm module;
+    used for making http/https request inside nodejs;
+    it returns a promise like fetch api of browsers;
+    can't use callbacks like in request module;
+    DEMERIT : it doesn't support ESM in its new version;
+    USE : version 2 of node-fetch;
+
+    command/code{
+
+        npm i node-fetch@2
+    }
+}
+
+environment variable{
+
+    these variable decides how a progamme will run;
+    process.env is the global variable present in node (also used in other systems with other name);
+
+    while making different project we can also make a seperate file for storing env variables of that project;
+    it helps in keeping the important data safe and also makes implementing changes flexible;
+    
+    dotenv module is required to be installed to use .env file in a project;
+
+        require("dotenv").config();
+
+    its normalised to name env variables in ALLCAPS;
+    .env files should be kept private (place .env in .gitignore);
+
+}
+
+database {
+    https://www.youtube.com/watch?v=v_hR4K4auoQ
+    
+    SQL {
+        structures query language;
+        its not a database;
+        its a language;
+        used for sequel database;
+        relational database;
+        requires a Schema which have proper rules defined for its data;
+        scaled vertically;
+        writing data is easy while fetching will take some time;
+        example : MySQL, PostgreSQL;
+
+        good for database with many relatinship;
+        like shopping Carts, Contacts, Networks;
+
+        no duplicate data is present (bad practice);
+    }    
+    NoSQL {
+        
+        not only structured query language;
+        non-relational database;
+        schema not required;
+        scaled horizintally;
+        writing data is messy but fetching will be easy and fast;
+        example : mongoDB, redis;
+
+        good for database with one to many relationship; 
+        like Logs, Orders, chat, etc.
+
+        duplicate data is present;
+        writing data will take time but reading it will be fast;
+    }   
+
+    Relational vs Non-relational database {
+
+        Relational{
+
+            structured data with tables having relation between one another through keys (primary and foreign);
+
+            Tabular format;
+
+            Atomic,
+            Consistent,
+            Isolated,
+            Durable;
+
+            schema is must;
+
+            vertically scaled;
+        }
+
+        Non relational{
+
+            unstructured data with collections having many one relations like having multiple reviews;
+
+            document, keyvalues, graph form;
+
+            ideal for storing data with many different kind and complex in nature;
+
+            Basically available, Soft state, Eventual Consistency;
+
+            schema is not important;
+
+            horizontly scaled;
+
+            choose when structure(schema) can change with time consistency is important (finding data in less time)
+
+            {
+                
+            }
+        }
+    }
+
+    CRUD operations {
+
+        create;
+        read;
+        update;
+        delete;
+    }
+}
+
+SQL vs NoSQL {
+
+    SQL: schema is must and all records have to follow it; 
+    NoSQL: schema is not necessary, if exist then its not necessary for records to follow it;
+
+    since there is no requirement to follow schema in NoSQL so we can change the format of data in future like add more parameters in the same collection;
+    this is not possible in SQL there we have to update the schema of the table and the whole database;
+
+    SQL: tables are related;
+    NoSQL: collections are not related and doesn't rely of relation;
+
+    in NoSQL we keep the basic required data of all other related collections in that collection so that we don't have to fetch other collection unnecessarily, so we do have duplicate data and changing data at one place means changing data at other place also; 
+
+    https://youtu.be/ZS_kXvOeQ5Y
+}
+
+mongoDB {
+
+    non-relational db;
+
+    we will use mongoDB server;
+    command{
+
+        mongod //for starting database server;
+        mongo  //for using mongo shell;
+    }
+
+    naming conventions {
+
+        like collection name should be lowercased and in plural form;
+        modal name should be in singular form;
+    }
+
+    docs.mongodb.com/manual/crud/
+}
+
+native mongodb driver{
+
+    for using mongoDB Atlas(cloud db) in our application;
+    using assert module for verification;
+    command{
+
+        npm install mongodb
+    }
+
+}
+
+mongoose {
+
+    Mongoose is a JavaScript object-oriented programming library that creates a connection between MongoDB and the Node.js;
+
+    have to create a modal to interact with the collections;
+    modal is like a representation of collection;
+
+    it helps in verifications for data by adding rules in the modal for that data;
+    it also helps in managing relationship between data by providing schema;
+    it is mainly used to translate between objects in code and the representation of those objects in MongoDB;
+
+    mongoosejs.com/docs 
+
+    for deleting in moongoose use must pass a callback function in it;
+
+    RoboMongo, mongodb compasse, studio3T {
+
+        a UI for using and managing mongoDB;
+    }
+
+}
+
+lodash {
+
+    a native node module;
+    used for capitalising letters;
+
+    lodash.com/docs
+}
+
+RESTful API {
+    
+    REpresentational State Transfer;
+
+    REST is just an architechtural style for designing API
+    other styles : GraptQL, SOAP, FALCOR;
+
+    there a set of rules to make an API restful;
+    2 main rules are {
+
+        use HTTP Request Verbs {
+            
+            verbs like GET, POST, PUT, PATCH, DELETE;
+
+            PUT vs PATCH {
+
+                put is for replacing data with a new one;
+                patch updates only the required part;
+            }
+        }
+        use specific pattern of Routes/Endpoint URLs;
+    }
+
+    {
+        different error codes:
+            404 Not Found.
+            401 Unauthorized.
+            403 Forbidden.
+            400 Bad Request.
+            422 understood but can't process your request.
+            429 Too Many Requests.
+            500 Internal Server Error.
+            502 Bad Gateway.
+            503 Service Unavailable.
+    }
+}
+
+CORS error {
+
+    cross origin resource sharing;
+    problem with sending http request to another server;
+    its a security protocol done by the browsers;
+
+    its a front-end/browser side error;
+}
+
+
+cloud firestore {
+
+    NoSQL database;
+    horizontly scaling;
+
+    collection vs documents;
+
+    collection can only contain document;
+    document can only be of 1Mb;
+    document cannot contain another document;
+    document can point to another subcollection;
+}
+
+firewall {
+
+    its a network security device that monitors and filters incoming and outgoing network traffic based on an device/organization's previously established security policies;
+
+    a firewall is essentially the barrier that sits between a private internal network and the public Internet;
+
+    it guards traffic at a computer's entry point, called ports, which is where information is exchanged with external devices;
+    for example, “Source address 172.18. 1.1 is allowed to reach destination 172.18. 2.1 over port 22;
+
+    Five types of firewall {
+
+        packet filtering firewall (check each packets); 
+        circuit-level gateway (check session legimacy);
+        stateful inspection firewall (check both);
+        application-level gateway (aka proxy firewall);
+        next-generation firewall (NGFW) (combo of almost all);
+
+        https://youtu.be/uGaERP4Npys
+    }
+}
+
+cookies {
+
+    its name was derived from the term "magic cookie", which is a packet of data a program receives and sends back unchanged, used by Unix programmers;
+    the term magic cookie itself derives from the "fortune cookie", which is a cookie with an embedded message;
+
+    HTTP cookies (also called web cookies, Internet cookies, browser cookies, or simply cookies);
+    small blocks of data created by a web server while a user is browsing a website and placed on the user's computer;
+    more than one cookie may be placed on a user's device during a session;
+
+    Typically, the following are allowed {
+
+        300 cookies in total;
+        4096 bytes per cookie;
+        20 cookies per domain;
+        81920 bytes per domain(Given 20 cookies of max size 4096 = 81920 bytes.)
+
+    }
+
+    cookies is the oldest system used for storing session data (among localStorage and sessionStorage);
+}
+
+cookies vs localStorage vs sessionStorage {
+
+    capacity{
+
+        localStorage: 5/10 MB;
+        sessionStorage: 5 MB;
+        cookies: 4KB;
+    }
+
+    accessable from {
+
+        localStorage: any window;
+        sessionStorage: same tab;
+        cookies: any window;
+    }
+
+    expires {
+
+        localStorage: never;
+        sessionStorage: on tab close;
+        cookies: manually set;
+    }
+
+    storageLocation {
+
+        localStorage: client side;
+        sessionStorage: client side;
+        cookies: both client and server side;
+    }
+
+    {   
+        cookies is sent along with http requests;
+        localStorage and sessionStorage are not;
+    }
+
+    USE {
+
+        localStorage: when we want our page to always hold some data that is not confidential;
+
+        sessionStorage: can be used to store the state of the interface;
+            e.g. :  whenever you visit a page, customize it, visit another page and return to the same page, you would want to show the page how the user customized it;
+
+        cookies: when the server needs to know some information like authentication keys;
+    } 
+
+    https://stackoverflow.com/questions/19867599/what-is-the-difference-between-localstorage-sessionstorage-session-and-cookies
+}
+
+
+
+

@@ -1,0 +1,351 @@
+// ALSO CHECK {
+
+    desktop/WebD/H36/notes.txt
+    desktop/WebD/React march/notes.txt
+}
+
+NEW KEYWORDS {
+
+    SOP {
+        same origin policy;
+        it allows scripts running on pages originating from the  'same site' to access each other's DOM with no specific restrictions, but prevents access to the DOM on different sites;
+
+    }
+
+    blob {
+
+        A blob object is simply a collection of bytes that contains data stored in a file.
+    }
+    createObjectURL {
+        
+        static method creates a string containing a URL representing the object given in the parameter.
+        The URL lifetime is tied to the document in the window on which it was created. The new object URL represents the specified File object or Blob object.
+
+    }
+
+    UML {
+
+        Unified modelling language;
+        a graphical modelling language in software engineering;
+        use case diagram is one of it;
+    }
+};
+
+HTML{
+
+    HyperText MarkUP language;
+    its the standard markup language for document designed to be displayed in a web browsers;
+
+    its standard is maintained and developed by WHATWG (Web Hypertext Application Technology Working Group);
+
+    https://developer.mozilla.org/en-US/docs/Web/HTML
+}
+
+hypertext {
+
+    "Hypertext" refers to links that connect web pages to one another, either within a single website or between websites;
+    
+    Links are a fundamental aspect of the Web. By uploading content to the Internet and linking it to pages created by other people, you become an active participant in the World Wide Web.
+} 
+
+markup language{
+
+    A computer language that consists of easily understood keywords, names or tags;
+    
+    it helps to format the overall view of a page and the data it contains;
+     
+    Some examples of a markup language are BBC, HTML, SGML, and XML
+
+    md(markdown) is also a lightweight markup language that is used in readme files;
+}
+
+CSS {
+
+    Cascading Style Sheets (CSS) is a stylesheet language;
+    
+    it instructs the browser how we want our HTML to appear; 
+    it is used to describe the presentation of a markup language;
+    
+    it is not a programming language;
+}
+
+Javascript{
+
+    javascript is a scripting language;
+    it uses an interpreter for converting high-level language into machine codes;
+
+    Javascript is the language used in WWW and by all browsers;
+    all different browsers have different JS engines for interpretting JS codes;
+    the core architecture Javascript is based on different version of ECMAScript(ES);
+
+    eg. JS ES1, ES5, ES6(supported by most browsers);
+}
+
+scripting vs programming language{
+
+    scripting language uses a interpreter(in a run-time environment) while programming language uses compiler;
+
+    for a scripting language there is no need to make an executable file unlike programming language;
+    normally for a scripting language shell is there to write line by line executable code;
+
+    a scripting language is a programming language(in the sense that it is also used to write programmes only);
+    a scripting language doesn't generally compiles the code rather interpret it;
+    a programming language compiles the whole code;
+
+    in scripting language interpreter is used which reads the code line by line;
+
+    in modern world differnce between the two is becoming blur with advancement of technology;
+    we can make an environment to compile a scripting language(making it a non-scripting language);
+    eg. google chrome V8 engine for JS;
+
+    we can also make an run-time environment to interpret a programming language (making it a scripting language);
+
+    eg. for scripting language : JS, python, php;
+    for programming language : c, cpp,
+}
+
+JS engines {
+
+    for running javascript we need an environment, these environment are found_in/called JS engine;
+    there are different version of javascript and these are to be supported by js engine for javascript to run correctly;
+
+    every browser have a JS engine in it;
+    eg. chakra (edge), v8 (chrome), spider monkey (firefox);
+
+    NOTE: most engine have interpreter designed to interpret the js but V8 compiles the js;
+}
+
+ECMAScript {
+
+    European Computer Manufacturers Association Script;
+
+    its a standard used for implementation of different scripting languages;
+    JS uses this standard;
+    it help to ensure that different browsers are interoperatable with each other as browsers use JS;
+
+    almost every every this standard is updated adding new features for the language;
+    different versions of ECMAScript: ES1, ES2, ES3, ES6, ES7;
+    https://www.w3schools.com/js/js_versions.asp
+
+}
+
+windows_object & Web APIs{
+
+    in browser there are many APIs used that are not part of javascript or say ECMAScript;
+    eg. DOM object, fetch, setTimer, XHR, etc;
+
+    these are part of the Web platform API defined by the standards of  WHATWG and W3C (World Wide Web Consortium);
+}
+
+fetch api{
+
+    its an api used for sending http requests;
+    it supports both http and https protocol;
+
+    its a replacement for XMLHttpRequest(XHR) api which was used in AJAX;
+    fetch api uses promises for simplicity unlike XHR in which we have to use callback functions;
+}
+
+AJAX{
+
+    Asynchrounous Javascript and XML;   
+    not a programming language;
+
+    its a method used to update/change a part of the webpage without reloading the whole web page;
+    it exchange data from the web server bts and change the part of the webpage;
+
+    uses combination of: 
+        built-in XMLHttpRequest object;
+        Javascript and DOM module;
+}
+
+json{
+
+    its a standard for formatting document and used to communicate;
+    beside json xml format was used;
+
+    JSON.stringify(object);  //to convert a js object to json object
+    JSON.parse(jsonFile);   //to convert a json object to js object
+    jsonFile.json();        //to convert a json object to js object 
+}
+
+.json() vs JSON.parse(){
+
+    Body.json() is asynchronous and returns a Promise object that resolves to a JavaScript object;
+    JSON.parse() is synchronous can parse a string and change the resulting returned JavaScript object;
+
+    use .json() with promise returning function like fetch;
+    use JSON.parse() with callback supporting function like request, AJAX;
+}
+
+In src attribute of any element{
+
+    when using prepending slash without dot "/location"{
+
+        it will start fetching from root dir when html file opened locally on the browser.
+        it will start fetching from current dir when html file opened through a server. 
+    } 
+
+    when using prepending slash with= dot "./location"{
+
+        it will always start fetching from current dir.
+    }
+
+    reference link : https://css-tricks.com/quick-reminder-about-file-paths/
+
+}
+
+accessing local files through browser {
+
+    when using live server or any server u won't to able to access root dir(not allowed to access local files);
+    for using files either copy it in src folder or open the html file locally;
+
+    "Cross origin requests are only supported for HTTP"
+
+    open it using http-server {
+
+        1. Install http-server by typing "npm install -g http-server"
+        2. Change into your working directory, where your "some.html" lives
+        3. Start your http server by issuing http-server -c-1
+
+        This spins up a Node.js http which serves the files(js, css etc.) in your directory as static files accessible from http://localhost:8080
+    }
+
+}
+
+blob{
+
+    stands for binary large object;
+
+    its a file like object of immutable, raw data;
+    can be read as text or binary data;
+    can be converted to readableStream (its method can be used for processing the data);
+
+    new Blob([ data ], {type:"text/plain", endings: "transparent"||"native"});
+
+    new File([ data ], filename, {type:"text/plain", lastModified: Date.now()});
+
+    data - Blob, ArrayBuffer, TypedArray, DataView, String (utf-8 string), a mixture;
+
+    File is a sub-class of Blob. Can often be used interchangeably;
+    Once you have a Blob/File then you can use it:
+        - upload via fetch as a file or stream;
+        - save it in the cache;
+        - add a link in a webpage to the file;
+        - display it as an image (if image);
+        - read the text contents (json, txt, html...) and:
+            - display on page;
+            - parse the html, xml, json, etc;
+            - save in localStorage or cookie;
+
+
+    ArrayBuffer - raw data as a fixed-length string of bytes. It is NOT an Array.
+
+    DataView - an interpretation of some raw bytes expressed as 8-bit, 16-bit, 32-bit,
+        or 64-bit integers. Used to add or edit data in an ArrayBuffer. Like a wrapper 
+        for ArrayBuffers if you need to edit them. It is a View of the Data from the ArrayBuffer;
+
+    TypedArray - It is an Array-like view of raw bytes stored as 
+        8-bit, 16-bit, 32-bit or 64-bit  integers, clamped integers, 
+        signed and unsigned integers, or floats;
+
+    https://youtu.be/ScZZoHj7mqY
+}
+
+input "file" {
+
+    it stores the file in file object(a sub-class of blob);
+
+    <input type="file" title="choose file" />;
+
+    //specifying type of file to select 
+    <input type="file" title="choose file" accept="images/*" />;    (images);
+    one can put file-extensions or mime-type(media-type / Multipurpose Internet Mail Extensions) or both in the "accept" attribute;
+    eg. text/html, .html, text/xml, .xml, text/css, .css, application/json, .json, text/json etc.
+
+    //for selecting multiple file 
+    <input type="file" title="choose file" multiple />;
+}
+
+cdnjs{
+
+    using this site to get different cdn links for different libraries and modules;
+}
+
+immutable vs mutable{
+
+    one can't change the content of immutable data;
+    one can only assign an entirely new created data to the variable which is holding an immutable data;
+
+    in javascript primitive data(data that is not an object and has no methods or properties) a immutable;
+
+    eg. 
+    immutable: boolean, number, string, symbol etc.;
+    mutable: array, object, map, date etc.;
+}
+
+
+
+
+
+------------------------------------------------------------------------
+
+USE CASE DIAGRAM (USD){
+    
+    a part of UML;
+    4 elements of USD {
+
+        system{
+
+            it includes the use cases and the relationship between the use case and the actors;
+        }
+
+        actors{
+
+            they are outside of the system who interacts with the system;
+        }
+
+        use case{
+
+            these includes the different cases present in the system;
+
+            specialized use cases;
+            included use cases;
+            extend use cases;
+
+            extension points in use cases ==> creates extend use cases;
+
+        }
+
+        relationship {
+
+            types {
+
+                accociations{
+
+                    straight line between the actor and the base use case;
+                }
+                include{
+
+                    shows dependecies between the base use case and the included use case;
+
+                    happens everytime the base use case is executed;
+
+                    using dashed line pointing towards the included use case;
+                }
+                extend{
+
+                    happens sometime when base use case is executed;
+
+                    happens sometimes only;
+
+                    using dashed line pointing towards the base use case;
+                }
+                generalization;
+            }
+        }
+    }
+
+}
+
+--------------------------------------------------------------

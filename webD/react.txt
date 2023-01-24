@@ -1,0 +1,301 @@
+NEW KEYWORDS {
+
+    super() in classes in js;
+    .some() method in array;
+
+}
+
+client side vs server side{
+
+    These two terms are used in the context of web. Client-side means that the JavaScript code is run on the client machine, which is the browser. Server-side JavaScript means that the code is run on the server which is serving web pages.
+}
+
+server {
+
+    A server is a computer program or device that provides a service to another computer program and its user, also known as the client. In a data center, the physical computer that a server program runs on is also frequently referred to as a server.
+}
+
+React is csjs while Node is ssjs.
+its a front-end JavaScript library;
+
+if condition in js{
+
+    if( my_var){}
+
+    if(my_var !== null)
+
+    {
+        The only values that are not truthy in JavaScript are the following (a.k.a. falsy values):
+
+        1. null
+        2. undefined
+        3. 0
+        4. "" (the empty string)
+        5. false
+        6. NaN
+    }
+}
+
+imparitive approach (writing everything using only js, describing action after actions step after steps)
+
+"REACT is all about custom html element"
+
+angular vs react vs vue 
+
+let is for block scope and var is for function scope
+
+var is related to refrencing while let is storing actual values.
+
+spread and rest operator{
+
+    spread{
+        //for adding new key-value pair
+        const newarr = [...oldarr,1,2];
+        const newobj = {...oldobj, newProp: 50}
+    }
+
+    rest{
+        function sortArgs (...args){
+            return args.sort()
+        }
+
+        can use simple array too;
+    }
+}
+
+destructuring{
+
+    {
+        [a,b] = ['Hello','Max']
+        console.log(a) //Hello
+        console.log(b) //Max
+    };
+
+    {
+        {n} = {Name: 'Max', age: 34}
+        console.log(n) //Max
+        console.log(age)  //undefined
+    }
+
+}
+
+object and array are referenced type
+
+React is written in DECLARATIVE way{
+
+    define the desired target state(s) and let React figure out the actual JavaScript DOM instructions
+}
+
+
+Creating React Project {
+
+    //install nodejs;
+
+    command{
+
+        npx create-react-app projectFolderName
+        //go inside the created folder 
+        npm start
+        npx create-react-app ./    //for creating project in current folder
+    }
+    
+}
+
+Copying React Project {
+    
+    //install nodejs;
+
+    command{
+        //go inside the created folder 
+        npm install
+        npm start
+    }
+ 
+}
+
+JSX (JavaScript XML code){
+
+    its the syntax used when we write html codes in js files.
+
+    using className instead of class in vanilla js;
+
+    custom component's name should start with a capital letter;
+ 
+    all html components used are defined seperately in react;
+}
+
+Our own components dont have built in props so has to use built-in-components only for the props to work
+
+useState hook {
+
+    whenever useState's returned function is executed then whole component is re-rendered or say the whole function inside which that useState was declared is re-executed;
+
+    only be called inside of the component function;
+    Not outside or in nested form;
+
+    when updating a useState depends on previous state's value then use a callback function in the useState function, the argument in the callback function will be previoutState;
+}
+
+useEffect hook{
+
+    its causes side-effects to take place;
+
+    it works as method with 2 parameters;
+    1st parameter is a function that will be executed whenever the application re-renders;
+    2nd parameter is a array of variable whose values when changed causes function(1st parameter) to be executed;
+
+    when an empty array is set as second parameter then 1st parameter function is only executed on onMount and not on any useState changes;
+}
+
+onMount{
+
+    "Mounting" is when React "renders" the component for the first time and actually builds the initial DOM from those instructions;
+}
+
+hooks{
+
+    it allows you to use state and other React features without writing a class;
+}
+
+onChange event in input div;
+
+onClick event in form div{
+    using event.preventDefault;
+}
+
+function as the first gen citizen in JS;
+handler in webD
+
+Routing {
+
+    command{
+
+        npm install react-router-dom
+    }
+
+    it checks the path {
+
+        if one path also contains another path then that component/page is also executed;
+
+        using Switch component and 'exact' attribute to fix it{
+
+            Switch is replaced with Routes in react-router-dom v6 version;
+
+            npm uninstall react-router-dom
+            npm install react-router-dom@5.2.0
+        }
+    }
+
+    using Link from 'react-router-dom' instead of <a> 'anchor tag'{
+
+        <a> send a request to the server which reloads the page;
+
+        <Link> just navigate to the required route without reloading as react works in a single page so no reloading is required;
+    }
+
+    Link{
+        'to' attribute just like 'href' in <a>;
+    }
+}
+
+
+CSS module{
+    
+    a built-in feature in react-project;
+    
+    'cssFileName.module.css'
+    now while importing this file it will return an object; 
+}
+
+rendering a list of data{
+
+    arrays can be rendered in react{
+
+        {[<li>item1</li>, <li>item2</li>, <li>item3</li>]}
+    }
+
+    using map() method;
+
+    Each child in a list should have a unique "key" prop;
+    So add attribute 'key'  in <li> 
+}
+
+using Card to Wrap a JSX content{
+
+    intstead of closing Components like <Component /> we do <Component> some JSX content </Component>;
+
+    this swallows the whole JSX content;
+    using props.children for fixing this
+    props.children{ 
+
+        a special props component defined by default;
+    }
+}
+
+CSS {
+
+    for setting maximum width{
+
+        width: 40rem;
+        max-width: 90%;
+    }
+}
+
+
+using 'htmlFor' attribute instead of 'for' in <label> element;
+
+
+'ref' prop {
+
+    just like 'key' prop this prop is also supported in every element;
+}
+
+using useHistory hook {
+
+    using .replace in place of .push ;
+}
+
+CAN'T USE ASYNC AWAIT IN REACT COMPONENT FUNCTION {
+
+    component function should be synchronous and should not return a promise;
+}
+
+infinite loop due to using fetch() and useState simultaneously;
+
+transform object data to array{
+    extracting data;
+    using spread;
+    .push();
+}
+
+using .concate instead of .push {
+    .push is not a return type means it does the work on the object but doesn't returns it;
+
+}
+
+google_maps{
+
+    paste in index.html{
+
+        <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        </script>
+    }
+
+    apiKey = AIzaSyCq1GqijQNh0YRuw_GKpH6vYinss1SPLXc;
+}
+
+
+hooks{
+
+    
+}
+
+
+command{
+
+    //for fixing {
+        npm audit fix
+    }
+
+}
