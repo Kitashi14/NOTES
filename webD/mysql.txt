@@ -70,8 +70,9 @@ MySQL{
         //command line
 
         mysql --version
-        mysql -u <username> -p      //then enter your password to access mysql cmd line interface
+        mysql -u <username> -p      //then enter your password to access mysql cmd line interface (its a 4 digit password)
 
+        open services.msc for starting and stopping different services;
 
 
 
