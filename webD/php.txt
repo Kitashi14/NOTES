@@ -1,0 +1,133 @@
+NEW KEYWORDS{
+
+
+}
+
+php{
+
+    it is a scripting language;
+    generally used in web development;
+
+    its interpreted on server side like python, C#, etc...;
+    unlike javascript it can't be interpreted by browser;
+
+    it can be written along side of html using tag <?php?>;
+
+
+    working{
+
+        web browser can't process php files;
+        for its interpretation php interpretor is needed;
+        we run a web server with php in it like apache;
+        browser send http request to web server with php files which is then processed and interpreted;
+        after interpreting php files it is send back as http response as html files;
+    }
+
+    data types and variables{
+
+        string, integer, float, boolean, array, object, NULL, Resource;
+
+        Resource: special variable that holds a resource;
+
+
+        variables must be prefixed with $;
+        variables are case sensitive;
+    }
+
+    keywords and syntax{
+
+        echo is used to display/print data in the frontend html;
+
+        eg. echo 'hello world';
+            echo $variable_name;
+
+        print can also be used to display data, but can only take in a single argument;
+
+
+        print_r() is used to display single values and arrays;
+        count() is used to find the length of the array;
+        foreach() can be used loop through array;
+
+        
+        var_dump is used to display data with its data type;
+
+        eg. var_dump('hello world');
+            var_dump(234);
+
+
+        for displaying variable's data in a string we can concatenate it using dot to join or use double quotes similar to backticks in js;
+
+        eg. echo $name . ' is' . $age . ' years old';
+            echo "${name} is ${age} years old";
+        
+        
+        for defining a constant we use define();
+
+        eg. define('HOST', 'localhost');
+
+
+        associative array is like dictionary or say map;
+
+        eg. $hex = [
+                'red' => '#f00',
+                'bluen' => '#00f',
+                'green' => '#0f0'
+            ];
+
+            echo $hex['red'];
+
+
+        date function for getting different data of current time;
+
+
+        using 'global' keyword to acces global variables inside a function;
+
+
+        array functions{
+
+            count(<array_variable>) to count the number of elements in array;
+
+            to check the presence of the element;
+            in_array(<element to check>,<array_variable>);
+            returns boolean value;
+
+            to add new elements to the array;
+            <array_variable>[] = <new_element>;
+            array_push(<array_variable>,<new_element>);
+            arrya_unshift(<array_variable>,<new_element>);      //adds at the beggining of the array
+
+            to remove elements from the array;
+            array_pop(<array_variable>); //last element
+            array_shift(<array_variable>); //first element
+            unset(<array_variable>[<index>]);    //removes the index plus element;
+
+            merge two array;
+            array_merge(<array_variable_1>,<array_variable_2>);
+            using spread operator like in javascript;
+
+            making associative array using 2 array of same length;
+            <associative_array_variable> = array_combine(<array_variable_1>,<array_variable_2>);
+
+            extracting keys of an associative array and making array of same;
+            <key_array_variable> = array_keys(<associative_array_variable>);
+
+            flip an array;
+            <flip_array_variable> = array_flip(<array_variable>);
+
+            creating array of a range of numbers using range() function;
+            eg.   $arr  = range(1,54);      // 1,2,3,....,53,54
+
+            mapping array with a function;
+            eg. $newArr= array_map(function($data){
+                    return $data*2;
+            },$arr);
+
+            filtering array with a function
+            eg. $newArr = array_filter($arr,function);
+        }
+
+        
+        
+
+    } 
+}
