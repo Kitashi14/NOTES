@@ -13,6 +13,7 @@ NEW KEYWORDS{
 NOTES{
 
     can use drawsql.app for making chart;
+    read this blog : https://xpromx.me/blog/database-table-and-column-naming-converntions
 }
 
 MySQL{
@@ -73,7 +74,6 @@ MySQL{
         mysql -u <username> -p      //then enter your password to access mysql cmd line interface (its a 4 digit password)
 
         open services.msc for starting and stopping different services;
-
 
 
         //inside mysql command line interface
