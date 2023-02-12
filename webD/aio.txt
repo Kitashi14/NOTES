@@ -252,6 +252,60 @@ SSH {
     SSH uses TCP, not UDP (User Datagram Protocol).
 }
 
+X11 {
+
+    X Window System (also known as X11, or just X);
+    refers to the 11th edition of the X Window System;
+    an open source graphics protocol developed in the early days of the internet; 
+    its also contains software package and network protocol;
+    a windowing system for bitmap displays
+    common on Unix-like operating systems (eg. macOS, any linux os); 
+    it not the part of the os;
+
+    it is used to implement a GUI for unix-like os;
+    it provides the basic framework for gui environment;
+
+    x-server{
+
+        this GUI has a main program called X server, the heart of x11;
+        it manages access to graphical displays and input devices;
+        it creates the windows for the GUI;
+        it is used to run x-applications (application with a gui);
+
+        its called a server as it can display its output to remote devices connected within the network;
+        its controlled using an env var called DISPLAY;
+
+        eg. X-org-X11, XFree86;
+
+        as its a server so client program is also present called x-client which runs on the client side on which the gui is shown;
+
+    }
+
+    
+    window manager{
+
+        while x server creates the windows in the GUI its the window manager which determines how it will look;
+
+        its different from a file manager;
+        the job of a window manager is to handle how all of the windows created by various applications that share the screen and who gets user input at any given time;
+
+        eg. enlightment, fvwm, kwin, sawfish, twm
+        microsoft windows uses Desktop Window Manager (DWM) by default;
+    }
+
+    desktop environment{
+
+        it is the desktop for the GUI like the desktop in windows;
+        its not necessary to have a desktop environment in the GUI;
+
+        eg. KDE & GNOME;
+    }
+
+    all three programs i.e. Xserver, window manager and desktop env are modular programs so one use different combination based the their mutual compatibility;
+
+    most importantly it lets you interact locally, using your personal computer's display, mouse, and keyboard, with the graphical user interface (GUI) of an application running on a remote networked computer;
+}
+
 http { 
     hypertext transfer protocol;
 
@@ -270,11 +324,14 @@ http {
 
 port{
 
-     a port is a number assigned to :
+    a port is a number assigned to {
+
         uniquely identify a connection endpoint and to direct data to a specific service;
         in OS, its to identify a specific process or a type of network service;
+        in a normal device multiple applications can be running with a single ip address for the devide then its the port no. that is assigned to different applications to decide the endpoint;
+    }
     
-    Ports are numbered and used as global standards to identify specific processes or types of network services;
+    Ports are also numbered and used as global standards to identify specific processes or types of network services;
     https://www.quora.com/What-is-the-difference-between-port-and-port-number
 }
 
@@ -337,9 +394,9 @@ TCP {
 Datagram{
 
     its a unit/packet of data consisting of a header which have enough information to enable any switch to decide how to get it to its destination;
-    very packet contains the complete destination address;
+    every packet contains the complete destination address;
 
-    its used in datagram network which is often called connectionless network;
+    it is used in datagram network which is often called connectionless network;
     in datagram network there is no handshake and every switch decides where the datagram will head to using forwarding table(aka routing table);
 
     when the network becomes large and complex then its diffucult to create forwarding table, its then that we use the method called routing;
