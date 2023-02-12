@@ -1,0 +1,524 @@
+NEW KEYWORDS {
+
+    DHCP: dynamic host control protocol;
+    NAT: network access translator;
+    SONET: synchronous optical networking;  
+    frame relay;
+
+    https://www.submarinecablemap.com/
+}
+
+NOTES & FACTS{
+
+    computer : Common Operating Machine Purposely Used for Technological and Educational Research;
+    network : computers connected together;
+    internet : collection of these computer networks;
+
+    Internet Society sets internel protocols;   
+}
+
+
+how it started{
+
+    during cold war between soviet union and usa;
+    a battle for launching the first satellite;
+    USSR won with Sputnik in 1957;
+    in response USA created ARPA;
+}
+
+ARPA{
+
+    a research and development agency of the United States Department of Defense;
+    responsible for the development of emerging technologies for use by the military;
+    now renamed as DARPA;
+    
+    they had their bases at different parts of the USA;
+    for communicating between these different bases they made ARPANET;
+}
+
+ARPANET{
+
+    Advanced Research Projects Agency Network;
+    the first wide-area packet-switched network with distributed control;
+    one of the first networks to implement the TCP/IP protocol suite;
+    established by the ARPA;
+
+    there were mainly 4 nodal points which were connected to form a network;
+    one at MIT, one at Utah, one at UCLA, one at Stanford;
+    they used TCP protocol for this network;
+}
+
+protocol{
+        a set of rules and regulations that are to be followed by all for attaining a proper harmony in the environment;
+
+        made by Internet Society;
+}
+
+
+TCP{
+
+    transmission control protocol;
+    its a communication protocol;
+    a global communication standard that devices used to transmit data;
+    
+    its a connection oriented protocol (i.e. both client and server had to be establish a connection first before sending data); 
+
+    one of the main protocols of the internet-protocol-suite(TCP/IP) in the transport layer other than UDP(User Datagram Protocol);
+    https://www.geeksforgeeks.org/tcp-ip-model/
+
+    retransmission of lost data packets is only possible with TCP;
+    used when we want full data to be received my the client/receiver without any loss or corruption;
+
+    https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
+
+}
+
+TCP ports{
+
+    as per research tcp port is same as port(the network related one);
+    its a 16-bit binary number;
+    types of ports{
+        well known;(0-1023)
+        registered ports for applications;(1024-49,151)
+        dynamics or say private port;(49,152-65,535)
+    }
+    
+    https://www.cbtnuggets.com/blog/technology/networking/what-is-a-tcp-port-and-why-they-are-important
+}
+
+port{
+
+    a port is a number assigned to {
+
+        uniquely identify a connection endpoint and to direct data to a specific service;
+        in OS, its to identify a specific process or a type of network service;
+        in a normal device multiple applications can be running with a single ip address for the devide then its the port no. that is assigned to different applications to decide the endpoint;
+    }
+
+    its a 16-bit binary number;
+    
+    Ports are also numbered and used as global standards to identify specific processes or types of network services;
+    https://www.quora.com/What-is-the-difference-between-port-and-port-number
+}
+
+
+Datagram{
+
+    its a unit/packet of data consisting of a header which have enough information to enable any switch to decide how to get it to its destination;
+    every packet contains the complete destination address;
+
+    it is used in datagram network which is often called connectionless network;
+    in datagram network there is no handshake and every switch decides where the datagram will head to using forwarding table(aka routing table);
+
+    when the network becomes large and complex then its diffucult to create forwarding table, its then that we use the method called routing;
+    routing is a process that takes place in the background so that, when a data packet arrives, we will have the right information in the forwarding table to be able to forward, or switch, the packet;
+
+    UDP(User Datagram Protocol) is used for this network;
+    in this it is not necessary to recieve 100% of the original data;
+
+    https://www.sciencedirect.com/topics/computer-science/datagram-network
+
+}
+
+http { 
+    hypertext transfer protocol;
+    communication protocol;
+    it is a member of the TCP/IP family;
+
+    web server and client communicate using http;
+    its a synchronous protocol;
+    uses port 80;
+
+    protocol for formatting/fetching/transferring resources/data like HTML doc, files, media etc. (hypermedia);
+    http request and response is used to exchange information between web server and client; 
+
+    when a http url is directly fetched then it acts as a get method by default;
+    different methods helps us to use same endpoints for different request;
+
+}
+
+tcp vs http{
+
+    TCP contains information about what data has or has not been received;
+    HTTP contains specific instructions on how to read and process the data once it's received; 
+    TCP manages the data stream;
+    HTTP describes what the data in the stream contains;
+}
+
+WWW{
+
+    World Wide Web (WWW);
+    commonly known as the Web;
+    is an information system enabling documents and other web resources to be accessed over the Internet;
+    it uses hyperlinks and URL for linking the contents of internet to each other;
+
+    first website : info.cern.ch/hypertext/WWW/TheProject.html
+}
+
+search engines{ 
+
+    a software system designed to carry out web searches;
+    they search the World Wide Web in a systematic way for particular information;
+    information specified in a textual web search query;
+
+}
+
+URL{
+
+    uniform resource locator;
+
+    it is a unique address of a file on the internet;
+    it is composed of {
+
+        protocol{
+            http, https;
+        }
+        domain name{
+            www.websitename.com , www.websitename.org;
+        }
+        relative path to be loaded aka subdirectories{
+            /home, /login ;
+        }
+    }
+}
+
+TCP/IP {
+
+    Transmission Control Protocol/Internet Protocol;
+    aka The Internet protocol suite;
+
+    TCP/IP is a family of communication protocols;
+    used to connect computer systems in a network;
+    it is named after two of the protocols in the family:
+        1. Transmission Control Protocol (TCP);
+        2. Internet Protocol (IP);
+    
+    a framework for organizing the set of communication protocols;
+    used in the Internet and similar computer networks according to functional criteria;
+
+
+}
+
+ip address {
+
+    internet protocol address;
+
+    unique address that identifies a device on the internet or a local network;
+    
+    in case of hostname, ip address of the particular device in the computer network is pointed;
+    ip is used to tell the destination;
+    
+    in case of domain name, ip address of the web server(a device) 
+    who stores the data/webpage for that site is pointed;
+    
+    multiple domain name may have same ip address when the same server is
+    storing/hosting data/webpages of different sites, this is called shared hosting;
+
+    https://superuser.com/questions/577070/is-it-possible-for-many-domain-names-to-share-one-ip-address 
+
+    ip address format {
+
+        x.x.x.x         //each range from 0-255;
+
+    }
+
+}
+
+server {
+
+    A server is a computer program or device that provides a service to another computer program and its user; 
+    also known as the client;
+    eg. in a data center, the physical computer that a program runs on is referred to as a server;
+
+    https://www.techtarget.com/whatis/definition/server
+}
+
+LAN{
+
+    local area network;
+    via ethernet cables, wifi;
+}
+
+MAN{
+
+    metropolitan area network;
+    across a city;
+    a computer network that connects computers within a metropolitan area;
+    which could be a single large city, multiple cities and towns, or any given large area with multiple buildings
+}
+
+WAN{
+
+    wide area network;
+    across a country;
+    a large network of information that is not tied to a single location;
+    the largest and most expansive forms of computer networks available;
+    often established by service providers that then lease their WAN to businesses, schools, governments or the public;
+}
+
+modem{
+
+    converts digital signal to analog signals;
+}
+
+routers{
+
+    routes the data package based on their ip address;
+}
+
+topologies{
+
+    bus topology;
+    ring topology;
+    star topology;
+    tree topology (bus+star);
+    mesh topology;
+}
+
+OSI model{
+
+    open systems interconnection model;
+    consists of 7 layers;
+    used for communication by computer systems over the internet;
+    it was the first standard model for network communications;
+
+    routers operate on the third layer of the OSI Model, the network-control Layer;
+    a router examines the packet's data structure and determines whether or not to forward it, rather than passing packets based on the Media Access Control (MAC) Layer addresses (as bridges do); 
+
+    the seven layers{
+
+        application;
+        presentation;
+        session;
+        transport;
+        network;
+        data link;
+        physical;
+    }
+}
+
+application layer{
+
+    involves the applications or say software;
+    it has protocols like http, ftp, TELNET etc.;
+
+    its the layer which user interacts with;
+    eg. whatsapp, browsers, etc;
+
+    
+}
+presentation layer{
+
+    it converts the data the human readable data into machine readable binary format;
+    eg. from ASCII (American Standard Code for Information Interchange) to EBCDIC (extended binary-coded decimal interchange code);
+
+    it involves translating, encoding, encryption, compression etc;
+    it also provides abstraction;
+
+}
+
+session layer{
+
+    establising the sesssion;
+    involves authentication and authoritation;
+}
+
+transport layer{
+
+    it determines how the data will be transferred;
+    eg. UDP & TCP;
+
+    it involves segmentation:
+        every segment will contain the source and destination port no. and a sequence no.;
+    
+    it also involves flow control, error control, check sum and other things;
+
+    two types:
+        connection oriented protocol => TCP;
+        connectionless protocol => UDP;
+}
+
+network layer{
+
+    involves the transmission of the received data segment;
+    
+    till transport layer the data was available in our own system/network;
+    in network layer it starts communicating with other computers;
+
+    router is presents in this layer;
+
+    it involves logical addressing:
+        assigns the senders and recievers ip address to every segments;
+    
+    it also involves routing, load balancing;
+}
+
+data link layer{
+
+    it involves formation of frames{
+
+        frames are the data unit/ pdu of data link layer;
+        it contains the physical address of the sender and receiver;
+        physical address means the MAC address;
+
+        MAC address{
+
+            media access control;
+            
+            its a 12-digit alpha numeric address of the network interface of the computer;
+            one computer doesn't have a single mac address, its bluetooth, wifi, etc. all can have different MAC address;
+        }
+    }
+}
+
+physical layer{
+
+    its contains the hardware part;
+    binary data recieved from previous layer will be converted to digital signals;
+    these digital signals are then transported using wires and cables;
+}
+
+
+TCP/IP model{
+
+    also known as internet protocol suite;
+    developed by ARPA;
+
+    5 layers are present{
+
+        application;
+        transport;
+        network;
+        data link;
+        physical;
+    }
+}
+
+client-server vs peer-to-peer architecture{
+
+    in client-server architecture a computer acts as a client or a server;
+    
+    in peer-to-peer architecture a computer cant act both as a client or a server;
+    its a decentralized architecture;
+    for eg. bit torrent, block chain (my opinion);
+}
+
+repeater{
+
+    present in physical layer; 
+    it regenerates the signal over the same network;
+    regenerates before it becomes weak or corrupted;
+
+    they do not amplifies the signal;
+    they regenerates the signal at original strength;
+
+    its a 2 port device;
+}
+
+hub{
+
+    its like a multiport repeater;
+    it connects multiple wires coming from different branches;
+
+    it cannot filter data so data are sent to all connected devices;
+    it doesn't breaks collision domain;
+    all hosts connected through a hub have a single collision domain;
+
+    types of hub{
+
+        active hub {
+
+            these hubs have there own power supply;
+            can clean, boost and relay the signal along the network;
+            serves both as repeaters as well as wiring center;
+            can be used to extend distance between nodes;
+        }
+
+        passive hub{
+
+            these collect wiring from nodes and power from active hub;
+            relays signal onto the network without cleaning and boosting them;
+            can't be used to extend distance between nodes;
+        }
+    }
+}
+
+
+
+collision domain{
+
+    when a device sends out a message to the network, all other devices which are included in its collision domain have to pay attention to it, no matter if it was destined for them or not;
+    it causes problem;
+    in a situation where two devices send out their messages simultaneously, a collision will occur leading them to wait and re-transmit their respective messages, one at a time;
+
+    router and switches breaks collision domain;
+    hub doesn't breaks collision domain;
+}
+
+broadcast domain{
+
+    when a device sends out a broadcast message, all the devices present in its broadcast domain have to pay attention to it;
+    creates a lot of congestion in the network;
+    affects the bandwidth of the users present in that network;
+
+    router breaks broadcast domain;
+    hub and switches doesn't breaks broadcast domain;
+}
+
+congestion{
+
+    refers to a reduction in QOS(quality of service);
+    causes packet loss, queueing delay, or the blocking of new connections;
+    occurs in cases of traffic overloading when a link or network node is handling data in excess of its capacity
+}
+
+web vs web2 vs web3{
+
+
+}
+
+routing{
+
+
+}
+
+routers vs switches{
+
+    both are network connecting devices;
+
+    router connects devices across multiple networks;
+    it works at mainly network layer;
+    finds the shortest path for a packet across the network;
+    it doesn't encrypt data while routing them;
+    most commonly used in the LAN and WAN domains;
+    its most expensive among hub, switches and routers;
+
+    https://www.tutorialspoint.com/difference-between-router-and-switch#
+
+    switches connect various devices in a network;
+    it works in data link layer;
+    it transmit data from multiple input ports to a certain output port;
+    also known as a multiport bridge;
+    it is used in LAN;
+
+}
+
+bridge vs router{
+
+
+}
+
+frame vs packet{
+
+
+}
+
+MAC vs IP{
+
+    
+}
+
+
+
+
+
