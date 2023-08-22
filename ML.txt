@@ -1,0 +1,62 @@
+NEW KEYWORDS{
+
+    hyperparameter;
+}
+
+tools{
+
+    language : python;
+    work env : jupyter, anaconda;
+    data analysis : pandas;
+    data visualization : matplotlib;
+    model tester : scikit-learn;
+    tenserflow, etc; 
+
+    websites : ml-playground,com;
+}
+
+categories{
+
+    supervised{
+        
+        data are labeled; 
+        we can tell the machine whether the output is right or wrong;
+        
+        types{
+            classification : draws a line to differentiate;
+            regression : a measure of the relation between output and corresponding values of other variables;
+        }
+    }
+
+    unsupervised {
+
+        data are not labeled;
+        we cannot tell the machine whether the output is right or wrong;
+        
+        types{
+
+            clustering;
+            rule learning;
+        }
+    }
+
+    reinforcement learing{
+
+        using and reward and punishment system;
+        eg. playing a game;
+         
+        types{
+
+            skill acquisition;
+            real time learning;
+        }
+    }
+}
+
+defination of ML{
+
+    using algorithms to learn about differnt patterns in data and then using that algorithm to predict about future using similar data;
+
+    it works of experience basis;
+    the more the model has experience the better it becomes;
+}

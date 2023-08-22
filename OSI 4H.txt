@@ -137,6 +137,54 @@ http {
 
 }
 
+
+synchronous protocol{
+    
+    in a synchronous protocol when a request is send then the other side waits for the response then proceed;
+    
+    http is a synchronous protocol as the client wait for the response or timeout to occur;
+    
+    it operates in a blocking manner i.e. clien't request blocks further execution;
+    this can lead to potential delay if the server takes longer time to process data;
+
+    there are asynchronous protocols also due to this like websocket;
+}
+
+websocket{
+
+    it is an asynchronous communication protocol;
+    it provides full duplex, two way communication over a single TCP connection;
+
+    it allows an open connection so that no new connections is required to be formed for every new request;
+    it can send and receive data at any time;
+
+    it is used for application like online gaming, chat application etc which requires real time updates;
+
+}
+
+duplexes{
+
+    full duplex{
+
+        allow data transmission in both directions simultaneously;
+        achieved by using seperate channels or frequency bands for sending and receiving data;
+    }
+
+    half duplex{
+
+        data can be transmitted in both the directions but not at same time;
+        it has to take turns to either send or receive data;
+    }
+
+    simplex{
+
+        its a unidirectional communication;
+        data can be transmitted from one direction only;
+        eg. tv, radio, etc.;
+    }
+
+}
+
 tcp vs http{
 
     TCP contains information about what data has or has not been received;
@@ -231,6 +279,90 @@ server {
     eg. in a data center, the physical computer that a program runs on is referred to as a server;
 
     https://www.techtarget.com/whatis/definition/server
+}
+
+proxy vs nat vs vpn {
+
+    NAT (Network Address Translation){
+
+        Function: NAT is used to map private IP addresses within a local network to a single public IP address, allowing multiple devices to share the same public IP when accessing the internet;
+
+        Purpose: It helps conserve IPv4 addresses and acts as a basic firewall by hiding internal IP addresses from external networks;
+
+        Privacy: NAT doesn't provide privacy or encryption for data transmission. It primarily focuses on translating IP addresses;
+
+        Usage: Commonly used in home routers and small networks to connect multiple devices to the internet;
+        
+    }
+
+    Proxy Server{
+
+        Function: A proxy server acts as an intermediary between a client and a destination server. It forwards client requests and receives responses on behalf of the client;
+
+        Purpose: Proxies can provide caching, content filtering, anonymity, and access control. They can also help improve network performance by caching frequently requested content;
+
+        Privacy: While proxies can offer some degree of anonymity, they do not necessarily encrypt the entire data transmission, leaving data vulnerable to interception;
+
+        Usage: Often used in corporate environments to control internet access, in web scraping, and for bypassing geographical restrictions;
+    
+    }
+
+    VPN (Virtual Private Network){
+
+        Function: A VPN creates an encrypted tunnel between the user's device and a remote server, encrypting all data transmitted through the tunnel;
+
+        Purpose: VPNs offer enhanced privacy, security, and anonymity by encrypting internet traffic, making it difficult for third parties to intercept or access data;
+
+        Privacy: VPNs provide a higher level of privacy compared to proxies, as they encrypt all data, including browsing activities, preventing ISPs and others from monitoring;
+
+        Usage: Used to ensure security on public Wi-Fi networks, access geographically restricted content, and maintain privacy while browsing;
+    
+    }
+    
+    In summary, NAT is primarily concerned with conserving IP addresses and providing basic security, while proxy servers offer some level of anonymity and control over internet traffic. VPNs excel in providing privacy, security, and encryption for all transmitted data, making them ideal for safeguarding sensitive information and maintaining online anonymity.
+}
+
+ipv4 vs ipv6{
+
+    IPv4 (Internet Protocol version 4){
+
+        Address Length: IPv4 uses 32-bit addresses, allowing for a total of about 4.3 billion unique addresses;
+
+        Address Format: IPv4 addresses are written in four sets of decimal numbers (octets) separated by periods (e.g., 192.168.0.1);
+
+        Scarcity: Due to the limited address space, IPv4 addresses are becoming increasingly scarce as the demand for internet-connected devices grows;
+
+        NAT (Network Address Translation): NAT is commonly used to mitigate the address shortage by allowing multiple devices within a private network to share a single public IP address;
+
+        Complexity: IPv4 header has fewer fields and options, which can lead to inefficient routing and slower performance;
+
+        Security: Security features are often added separately, making IPv4 networks more susceptible to certain types of attacks;
+
+        Transition: The transition from IPv4 to IPv6 involves challenges and complexities, as it's not backwards-compatible;
+
+
+    }   
+
+    IPv6 (Internet Protocol version 6){
+
+        Address Length: IPv6 uses 128-bit addresses, providing an immensely larger address space with approximately 340 undecillion unique addresses;
+
+        Address Format: IPv6 addresses are written in eight sets of hexadecimal numbers separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334);
+
+        Abundance: IPv6 was developed to address the exhaustion of IPv4 addresses and provide a sustainable solution for the growing number of internet-enabled devices;
+
+        No NAT Needed: With its vast address space, IPv6 eliminates the need for NAT, allowing devices to have unique global addresses;
+
+        Efficiency: IPv6 headers are more efficient and include improved routing options, leading to better performance;
+
+        Security: IPv6 was designed with security in mind, with features like IPsec (Internet Protocol Security) being an integral part of the protocol;
+
+        Transition: IPv6 has been designed to facilitate a smoother transition from IPv4, with mechanisms like dual-stack (running both IPv4 and IPv6) and tunneling;
+
+    }
+
+    In summary, IPv6 offers a solution to the addressing limitations and security concerns of IPv4, but its widespread adoption has been gradual due to the challenges associated with transitioning existing networks and devices to the new protocol.
+
 }
 
 LAN{

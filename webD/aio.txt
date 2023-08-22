@@ -264,13 +264,13 @@ X11 {
 
     it is used to implement a GUI for unix-like os;
     it provides the basic framework for gui environment;
+    it is used to run x-applications (application with a gui);
 
     x-server{
 
         this GUI has a main program called X server, the heart of x11;
         it manages access to graphical displays and input devices;
         it creates the windows for the GUI;
-        it is used to run x-applications (application with a gui);
 
         its called a server as it can display its output to remote devices connected within the network;
         its controlled using an env var called DISPLAY;
