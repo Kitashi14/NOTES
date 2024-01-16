@@ -162,7 +162,7 @@ AJAX{
 json{
 
     its a standard for formatting document and used to communicate;
-    beside json xml format was used;
+    beside json, xml format was used;
 
     JSON.stringify(object);  //to convert a js object to json object
     JSON.parse(jsonFile);   //to convert a json object to js object
@@ -348,4 +348,4 @@ USE CASE DIAGRAM (USD){
 
 }
 
---------------------------------------------------------------
+--------------------------------------------------------------------------

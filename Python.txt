@@ -1,0 +1,217 @@
+New Keywords{
+
+    char data type doesn't fixed, only string;
+
+    boolean operator:
+        or <=> ||
+        and <=> &&
+        not <=> !
+
+    # for single line comment;
+    ''' for multiple line comment;
+}
+
+
+string{
+
+    len(ss)     //returns the length
+    ss[i]       //returns the char at index 'i'
+    one can't modify a string using index;
+    string are 'immutable' data type;
+
+    ss.index(phrase)        //for finding the starting idx of phrase in ss, throws error if not prese nt
+
+    str(num)     //for converting a number(any kind) to string
+}
+
+numbers{
+
+    int, float
+    
+    abs(num)    //returns the absolute value of the number
+    round(num)  //round(4.5) = 4, round(5.5) = 6
+
+    form math import *          //import the math module
+    pow, sqrt
+    floor, ceil 
+    min, max
+
+}
+
+input{
+
+    name = input("ENTER YOUR NAME:")        //takes string input
+    num = float(input("Enter a number:"))   //type casting a string
+
+}
+
+list - 2D list{
+
+    an alternative for array;
+    array data structure is not present in python;
+
+    list can contain multiple type of data type unlike array;
+
+    l = ['ok', "cool", 56]
+    index = 0   1   2
+            -3  -2  -1
+ 
+    print(l[i:])    //print list containg elements from idx 'i' 
+    print(l[i:j])    //print list containg elements from idx 'i' to 'j-1'
+
+    list can be modified using index;
+
+    l1.extend(l2)   //add l2 in l1
+    l.append("lsdjf")   //add the new element in the last
+    l.insert(i,"dfds")    //insert the new element at idx 'i' 
+    l.remove("dfdsf")
+    l.clear()
+    l.pop()
+    l.index("ldjfd")
+    l.count("lfdjf")
+    l.sort()            //can't work if l contains multiple data-type
+    l.reverse()
+
+
+    //2d list can be of any dimensions
+
+    twoD_l = [
+        ["ksldjf","lsdjf",23],
+        [3.434,453, "sdljf",34],
+        [3434,34]
+    ]
+} 
+
+tuple{
+
+    similar to list but is immutable;
+
+    t = ("dksfd",'lsjfd',3434)
+
+}
+
+function{
+
+    def name_of_func(param1, param2):
+        //your code for the function should be inside the intendation
+    
+    name_of_funct("kdfs","dfdf")
+
+    use return when you want the function to return something;
+}
+
+if/else{
+
+    if condition_1:
+        //your code if condition is true
+        //
+        //
+    elif condition_2:
+        //your code if condition_2 is true
+        //condition_1 should be false 
+        //
+    else:
+        //your code if no condition is true
+        //
+        //
+    
+
+    condition can be of any data-type that can be type-casted into boolean data-type;
+
+    if "sd" in "sdjfdl":        //checks if a part is present
+        //your codd
+
+}
+
+dictionary{
+
+    its like map in other languages;
+    key-value pairs are present where keys should be unique;
+
+    dic = {
+        "key1" : "value1",
+        "key2" : "value2"
+    }
+
+    dic["key1"]     //returns the value associated with key "key1"
+    if the key doesn't matches to any keys present in the dictionary then it return 'None';
+    
+    dic.get("key1")     //same as previous
+
+    dic.get("key1", "prints this if the key is not found")
+     
+}
+
+while loop{
+
+    while condition:
+        //your code
+}
+
+for loop{
+
+    // using string, looping to every characters
+    for letter in "My name":
+        print(letter)
+
+    // using list, looping to every elements
+    for elem in ["skldfjd", "klsdjf", 034, 3.43434]:
+        print(elem)
+     
+
+    // using a range of number, print from 0 to n-1
+    for idx in range(n):
+        print(idx)
+
+    // using a range of number, print from i to j-1
+    for idx in range(i,j):
+        print(idx)
+}
+
+try/except{
+
+    similar to try-catch in javaScript;
+    write specific error;
+
+    one can also create an error(TypeError);
+}
+
+reading/writing file{
+
+    open("full_file_name","mode")       //returns a wrapper containing the file
+    file.close()
+    modes can be "r", "w", "r+"
+
+    file.readable()     //return a boolean value whether file is readable or not
+    file.read()         //returns the whole file in string format      
+    file.readline()     //returns a line of file in string format
+    file.readlines()        //return an array of string containing all lines of the file
+
+    you have to keep track of where the cursor is pointing while reading the file
+
+    file.write("your line to be added")         //writes in the file when in mode "w" or "a" or "r+"
+    in mode "a" it appends the line in the last of the file;
+    while in mode "w" it overwrites the entire file
+
+    "w" mode i.e. writing mode can also be used to create new file 
+
+}
+
+import/pip{
+
+    import module_name
+    from module_name import stuffs
+}
+
+class in python{
+
+    __init__ function;     //like constructor function in other languages
+    __str__ function;       //what to print when printing the object
+
+    del obj.prop        //deleting a property of an object
+    del obj             //deleting the whole object
+
+    inheritance and overriding
+
+}
+
