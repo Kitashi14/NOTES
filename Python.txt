@@ -21,7 +21,13 @@ string{
 
     ss.index(phrase)        //for finding the starting idx of phrase in ss, throws error if not prese nt
 
-    str(num)     //for converting a number(any kind) to string
+    str(num)     //for converting a number(any kind) to string 
+
+    str.split() //returns an array of all words;
+
+    f'your string {variable}'       //similar to `${variable}` in js
+
+    r'your string /path'        //will not consider any escape characters
 }
 
 numbers{
@@ -173,6 +179,12 @@ try/except{
     similar to try-catch in javaScript;
     write specific error;
 
+    try:
+    except:     //something went wrong
+    else:       //nothing went wrong
+
+    except Exception as err:        //stores any type of exception
+
     one can also create an error(TypeError);
 }
 
@@ -205,6 +217,7 @@ import/pip{
 
 class in python{
 
+    'self' parameter is required in all class functions;
     __init__ function;     //like constructor function in other languages
     __str__ function;       //what to print when printing the object
 
@@ -213,5 +226,11 @@ class in python{
 
     inheritance and overriding
 
+}
+
+apiView from DRF{
+
+    the response is converted to json;
+    the response should be a list or a dictionary only;
 }
 

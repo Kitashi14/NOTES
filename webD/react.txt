@@ -124,6 +124,18 @@ JSX (JavaScript XML code){
     all html components used are defined seperately in react;
 }
 
+js vs jsx{
+
+    jsx : js XML;
+    XML : Extensible markup language
+
+    JS is simply a scripting language, adding functionality into your website;
+    JSX is an addition to the JavaScript syntax which is a mixture of both HTML and JavaScript;
+
+    Both JS and JSX are interchangeable but JSX makes the code easier to understand for users;
+
+}
+
 Our own components dont have built in props so has to use built-in-components only for the props to work
 
 useState hook {

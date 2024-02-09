@@ -19,8 +19,8 @@ categories{
 
     supervised{
         
-        data are labeled; 
-        we can tell the machine whether the output is right or wrong;
+        data are labeled, different features are specified; 
+        we provide correct outputs for given input data points used for training;
         
         types{
             classification : draws a line to differentiate;
@@ -30,8 +30,9 @@ categories{
 
     unsupervised {
 
-        data are not labeled;
-        we cannot tell the machine whether the output is right or wrong;
+        data are not labeled, no features are specified;
+        we don't have any specific output for the given input data points;
+        it is used for exploratory data analysis and finding hidden patterns/features or groups in data;
         
         types{
 
@@ -42,7 +43,7 @@ categories{
 
     reinforcement learing{
 
-        using and reward and punishment system;
+        using reward and punishment system;
         eg. playing a game;
          
         types{

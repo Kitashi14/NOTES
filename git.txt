@@ -32,7 +32,7 @@ git stash clear	//delete git stashed files
 git remote add origin copied-link-from-github
 //origin is a variable used for the url
 git remote -v
-git push origin master		//pushes all commited files of branch master(of local)
+git push -u origin master		//pushes all commited files of branch master(of local)
 //master is the branch of github
 git branch branchname
 git checkout branchname	//head on this branchname now
@@ -55,4 +55,4 @@ git commit --amend -m <New commit message>
 //change commit message of any commit
 git rebase -i <commit-code>
 //then change work 'pick' to 'reword' for commit messages that needed to be modified
-//sepate editor for each commit message will open
+//seperate editor for each commit message will open

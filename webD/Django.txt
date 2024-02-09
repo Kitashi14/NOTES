@@ -1,0 +1,390 @@
+New Keywords{
+
+    hypervisor;
+    *args and **kwargs;
+
+    formnovalidate
+}
+
+problems with local server{
+
+    no collaboration;
+    different software for different os;
+    conflict with other apps;
+    dumping your pc with dev tools;
+    different os from the deployment server;
+}
+
+vagrant{
+
+    it helps in saving the settings of a server, which helps in recreating the server easily;
+    basically helps in managing the virtual development environment;
+
+    it uses a hypervisor to create a vm;
+}
+
+library vs framework{
+
+    framework>library>modules
+
+    framework is more larger and close to the base code, it tries to provide everything while library focuses on a particular area;
+}
+
+hypervisor{
+
+    also known as a virtual machine monitor or VMM, is software that creates and runs virtual machines (VMs);
+    a hypervisor allows one host computer to support multiple guest VMs by virtually sharing its resources, such as memory and processing;
+
+    2 types{
+
+        type 1 hypervisor acts like a lightweight operating system and runs directly on the host’s hardware;
+
+        KVM, Microsoft Hyper-V, and VMware vSphere are examples of a type 1 hypervisor;
+
+
+
+        type 2 hypervisor runs as a software layer on an operating system, like other computer programs;
+
+        VMware Workstation and Oracle VirtualBox are examples of a type 2 hypervisor;
+
+    }
+
+    a hypervisor is a software layer that enables one host computer to simultaneously support multiple VMs;
+    hypervisors are a key element of the technology that makes cloud computing possible;
+
+}
+
+container{
+
+    allow applications to run independently of an operating system;
+
+    can run on any operating system, all they need is a container engine to run;
+
+    containers package up just an app and its related services;
+
+}
+
+vagrant commands{
+
+    vagrant init os_image
+    vagrant up
+    vagrant ssh
+
+    vagrant directory of the guest os is syncronized with the host directory of the host os;
+   
+}
+
+venv python{
+
+    create a python virtual env to avoid installing packages needed for our project globally while using pip;
+
+    python -m venv PATH       //creates a venv at the specified path
+    source PATH/bin/activate       //activates the venv 
+
+    deactivate      //for deactivating the venv
+
+}
+
+installing packages{
+
+    pypi.org    //for finding details about different python packages
+
+    create a requirements.txt file{
+
+        it will help in installing the packages with specific versions;
+        it will also help in keeping the track of packages installed for the project;
+        it is somewhat similar to package.json in npm manager;
+
+        pip install -r file_name_with_extension     //command for installing all the packages 
+
+
+    }
+}
+
+django admin{
+
+    django-admin.py startproject project_name_folder PATH       //command to start a new django project
+
+    django-admin is Django’s command-line utility for administrative tasks;
+    
+    manage.py is automatically created in each Django project;
+    it does the same thing as django-admin but also sets the DJANGO_SETTINGS_MODULE environment variable so that it points to your project’s settings.py file;
+
+    a django project can contain 1 or more sub applications with different functionality within your project;
+
+    creating app{
+
+        python manage.py startapp app_name_folder       //creates a new directory for the applicaton
+
+    }
+
+
+    python manage.py runserver 0.0.0.0:8000     //to start the development server on the specified address
+}
+
+
+-------------------------------------------
+
+freeCodeCamp{
+
+    root/base dir of the project is the dir containing manage.py;
+
+    django_project vs django_app{
+
+        a project contains many different tasks, these tasks can be denoted by different apps;
+
+        one can work by creating a single app also;
+
+        command for creating a django project:
+        django-admin startproject project_name_folder PATH
+
+        command for creating a django app:
+        python manage.py startapp app_name_folder
+
+        command for starting the server:
+        python manage.py runserver 
+    }
+
+    url configrations{
+
+        we create url endpoints on each apps in a urls.py file;
+
+        we use a variable with name 'urlpatterns' to list all the urls for the application;
+
+        we then 'include' the urls of different apps in the urls.py of project folder;
+        path('your_url/',include('djangoApp.urls'))
+
+        eg. of a url endpoint:
+        path('route/',function_to_execute,name='name_id')
+    }
+
+    response{
+
+        we use HttpResponse from django.http to send responses;
+
+        templates{
+
+            we can use render from django.shortcuts to load html templates;
+
+            these html files are dynamic and can be manipulated with different variables;
+            it is done by using '{{}}' curly braces;
+
+            we have to pass a dictionary in the render function for the dynamic variables; 
+        }       
+    }
+
+    post request{
+
+        while making a form with post request we need to have a CSRF token, without it the server will show errors;
+
+        so we need to add '{% csrf_token %}' inside the form element;
+    }
+
+    static files{
+
+        make a folder for storing all the static files (css, images, etc.);
+
+        now in settings.py we first 'import os' to add the path of static folder;
+
+        STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)       //add this line of code in settings.py;
+
+        now to use these static file anywhere in the template html file we use '{% static 'file_name_with_extention'%}' at the required place; 
+        also we have to load the static file, for this we add '{% load static %}' at the start of the page;
+
+    }
+
+    django model{
+
+        helps in creating sql database;
+        a single model represents a single table;
+        a model contains the detail about all the attributes of the table;
+
+        we make a class that represents the model and the objects of the class are the data present in the table;
+
+        django used SQLite as the default database;
+        the file is created when we create the project;
+
+        we use models.Model class as base class;
+        no id field is required to be added by us;
+
+        we have to add the django app in the installed app of setting.py file to have the models migrated;
+
+        for migration{
+
+            python manage.py makemigrations
+            python manage.py migrate
+
+            it creates the models/table structure;
+            it is then reflected in the database;
+            we can see that in migrations folder;
+            we can see the database in django-admin site;
+        }
+
+        after migration we have to register the model in admin.py to see it on admin site;
+        admin.site.register(Model)
+
+        using models in views{
+
+            import the modle first;
+            from . import Model     //for importing model
+
+            model_objects = Model.objects.all()
+
+        }
+
+        creating new objects for a model{
+
+            modelObj = Model(feature1="1",feature2="2",...)
+            modelObj.save()
+        }
+    }
+
+    django-admin{
+
+        python manage.py createsuperuser    //we need a super user to use django admin
+
+    }
+
+    coding in django templates{
+
+        write inside '{% your logic %}';
+
+        for loop{
+
+            no colon at the end;
+            we have to end our for loop with '{% endfor %}';
+        }
+
+        if/else{
+
+            no colon at the end;
+            end with '{% endif %}'
+        }
+    }
+
+    user registration{
+
+        django has its own user model that can be used to register users;
+
+        from django.contrib.auth.models import User     //importing user model
+
+        user = User.objects.create_user(username='username',...)       //for creating new user object
+        user.save()
+
+        one can see the different attributes of the default user model in django admin route;
+
+    }
+
+    messages{
+
+        from django.contrib import messages     //importing messages module
+
+        it can be used to store messages that can be sent just like data object for rendering in template;
+    }
+
+    user login/logout{
+
+        from django.contrib.auth.models import auth         //importing auth module
+
+        user = auth.authenticate(username='',password='')       //built-in authenticate function, returns 'None' if user not authentic 
+
+        auth.login(request, user)       //logs in user, create and send a session for it   
+
+        auth.logout(request)        //for logging out user that came in that request  
+
+        using user object in template{
+
+            {% if user.is_authenticated %}      //for checking if an authenticated user is logged in
+        }
+    }
+
+    restricting page without login{
+
+        from django.contrib.auth.decorators import login_required       
+
+        @login_required(login_url='/your_login_url')
+        def view_you_want_to_restrict(request):
+            ...
+
+    }
+
+    dynamic url routing{
+
+        using params in url;
+
+        path('post/<str:pk>',...)       //passing a string in the url which is named as 'pk'
+
+        for accessing the variable in view func:
+            def post(request,pk):
+                ...        
+
+        using dynamic route in href attribute:
+            href="{% url 'post' pk %}" 
+            href="post/{{pk}}"          //both method works
+        
+    }
+
+    DRF{
+
+        django rest framework;
+
+        setup{
+
+            command: pip install djangorestframework
+
+            add 'rest_framework' in installed app of settings.py file;
+
+            in urls.py of django project add this path:
+                path('api-auth/',include('rest_framework.urls'))
+        }
+
+        we use 'APIView' class of DRF to make rest apis;
+
+        we don't create functions for the endpoints rather create a class inheriting 'APIView' class and create functions inside of it;
+
+        while adding the path in urls.py we have to use .as_view() method for these classViews as they are not functions;
+
+        serializers{
+
+            its a module present in rest_framework;
+
+            its similar to django forms for taking model data, where we check that the form data is within the limits of the designed models;
+
+            it helps to validate according to the model which comes from a post request;
+
+            in serializers.py{
+
+                creating a serializer for a model;
+
+
+                from rest_framework import serializers      //importing serializers module
+                
+                import the model also;
+
+                class YourModelSerializer(serializers.ModelSerializer):
+                    class Meta:         
+                        model = ModelName
+                        fields = ('field1','field2',)       //contains the field that will be present/required int the post request field 
+            }
+
+            in views.py{
+
+                import the module_serializer;
+
+                create an instance inside the post function of your api class add;
+
+                serializer = YourModelSerializer(data=request.data)
+
+                serializer.is_valid()       //returns a boolean value if the data is following the model 
+
+                serializer.save()       //saves the data inside the table
+
+                serializer.data         //returns the model object 
+
+                serializer.errors       //return the error when serializer is not valid
+
+            }
+        }
+    }
+
+}
