@@ -1,0 +1,192 @@
+questions{
+
+    what ETA;
+    what is DPL;
+
+    what library we will be using for css, making charts;
+    are we using DRF for making rest APIs;
+
+    What analytical information can be extracted, that we can visually present in some form like graph or pie-charts;
+    Do we haave data that are time varied can be represented to be shown in a line graph;
+    Most important data we want to show;
+    just to confirm it will not be user specific interface as no login requirement is there, everyone will see the same stuff;
+
+    till what level we can go to;
+    what data is important to you, what data you want to look for when we talk about aha and jeera{
+
+        for aha{
+
+            objective: whats the status from aha, don't want to go to this site for viewing it;
+
+            what is the data group that we have to show on dashboard{
+
+                what i am getting is:
+
+                data for workspace name IOS XE; 
+                have feature tags wireless plm, tech debt and serviceability;
+                have some particular status and release name;
+            }
+
+            what will be the range of the profile levels{
+
+                chris to managers;
+            }
+
+            which profile level is assigned with task, is it a particular level{
+
+                any, don't care much about it;
+            }
+
+            can a feature have two tags from the above 3 tags in any case;{
+
+                no, shouldn't
+            }
+
+            how will efficacy be calculated for any user;{
+
+                not here, done in bug reports
+            }
+
+            no cisco id used in aha, what if same name is present;{
+
+                it is there somewhere
+            }
+
+            if a child under a parent doesn't have any feature assign under him them should we show 0 features in the assignment chart;{
+                no, don't show him;
+            }
+
+            distrubution of attributes in level 1, level 2 and rest data;
+            possible design changes;
+            which tag is related to jira;
+            
+        }
+    }
+
+
+
+}
+
+keywords{
+
+    ETA
+}
+
+to-do{
+
+    django filters;
+    drf once again;
+    template more details;
+    serializers
+
+    try using the graph libraries;
+}
+
+JIRA{
+
+    software planning tool by atlassian;
+
+    its a project management tool used by teams to plan, track, release and support world-class software;
+    helps to capture and organize issues, assign work, and follow team activity;
+
+    its a ticket-based system that allows for a single point of contact to resolve IT issues, capturing data and correspondence to share among team members;
+}
+
+PLM{
+
+    project lifecycle management;
+    it is used in manufacturing to manage a product and its associated data through all stages of the product lifecycle;
+    JIRA is a PLM tool;
+}
+
+tech debt{
+
+    it is an issue type used to represent technical issues that need to be addressed to improve the long-term quality and maintainability of a system;
+
+    it is a common concept in software development, where team leaders delay features and functionality, cut corners, or settle for suboptimal performance to push the project forward;
+
+    it occurs as the result of a "build now, fix later" mentality;
+    in software engineering, tech debt is sometimes called code debt;
+}
+
+
+design ideas{
+
+    pages{
+
+        a persons view page;
+        a feature's profile page;
+    }
+
+    a person's view page{
+
+        url : /dpl/view/:profile_id     #for a particular profile
+        url ; /dpl/view                 #for home profile will show highest hirarchy view
+
+        dropdown for selecting a particular person's view;
+
+        option to select tag and type{
+
+            if a particular tag or type is being selected then add pie chart if lower hierachy exist;
+
+            if no lower hierachy exist then only show total counts of features;
+        }
+
+        show total no. of features;
+        show selected tag and type in top;
+
+        feature tag{
+
+            donut chart with different feature tag distribution;
+            optional: option for changing the view from pie chart to bar graph;
+            adding drilldown if a lower hierarchy data exists;
+        }
+
+        feature type{
+
+            donut chart with different feature status distribution;
+            optional: option for changing the view from pie chart to bar graph;
+        }
+
+        feature status{
+
+            pie chart graph showing the no. of features in different status;
+        }
+
+        feature release name{
+
+            pie chart showing the no. of features under different release name;
+        }
+
+        feature pin{
+
+            pie chart showing the no. of features under different pin;
+        }
+
+        table of content{
+
+            will depend on the profile, selected tag and selected type;
+        }
+
+        two level of data representation and filter{
+
+            level 1 is contains attributes that are of most importance, under which you would like to see the distribution of other attributes;
+            level 2 contains attributes that have limited number of categories and can be shown in chart format or can have filters implemented under them;
+
+            now how it works;
+
+            if you select a category in level 1 then you can see their distribution in both level 1 & level 2;
+            but you won't be able to select a category in level 2 and see their distribution in level 1 ;
+        }
+    }
+
+    a feature's profile page{
+
+        url : /dpl/feature/:feature_id
+
+        timeline of the feature;
+        percentage complete;
+        different hyperlink;
+        feature type;
+    }
+}

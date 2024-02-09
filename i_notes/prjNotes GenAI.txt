@@ -1,0 +1,181 @@
+NEW KEYWORDS{
+
+    transformers in genAI : consist of an encoder and decoder;
+
+    upstream tast vs downstream task in ai foundation models{
+
+        upstream{
+
+            task on which the model is dependent;
+            when the model need a training data;
+            its includes input data;
+        }
+
+        downstreak{
+
+            task which is affected by the model;
+            when prompt is given and data is received by the model;
+        }
+    }
+
+    npl: natural language processing;
+
+    Responsible AI;
+}
+
+to-do{
+    
+
+}
+
+terms to remember{
+
+    supervised-unsupervised learning;
+    regression-classification problems;
+
+    https://www.geeksforgeeks.org/difference-between-artificial-intelligence-vs-machine-learning-vs-deep-learning/
+
+    ai->ml->dl->genAI;
+}
+
+genAI{
+
+    these are large language models;
+
+    it comes under deep learning, which uses neural networks;
+
+    these models are used to produce data such as text, images, audios, etc;
+    where as models that is used to produce a label, discrete values, numbers, etc. does not comes under genAI;
+}
+
+deep learning{
+
+    it uses neural networks;
+    it uses semi-supervised learning i.e. both supervised and unsupervised data is used for learning;
+
+    deep learning models can be categorized into 2 types{
+
+        discriminative{
+
+            where you train a model to predict output of new inputs, regression and classification problems;
+        }
+
+        generative{
+
+            where you train a model to create new data points;
+        }
+    }
+
+}
+
+neural networks{
+
+    its inspired from our brain;
+}
+
+llm{
+
+    large language models;
+    its a subset of deep learning; 
+
+    these are models that are pre-trained and can be fine-tuned for specific purposes;
+
+    3 major features{
+
+        large{
+
+            large training data set;
+            large no. of parameters;
+        }
+
+        general purpose{
+
+            can solve common problems;
+            such as text recognization, document sumarization, text generation, etc.; 
+
+            resource is restricted as the large amount of data required for training are available to limited organizations only;
+        }
+
+        pretrained and fine tune{
+
+            pretrain a llm for a general purpose with large dataset;
+            then fine tune the model for specific purpose with much smaller dataset; 
+
+        }
+
+    }
+
+    benefits: 
+        a single llm can be used for different tasks (general purpose tasks);
+        can be trailored/fine-tuned for a specific task with minimal data;
+        performance is growing with increasing no. of data and parameters;
+    
+    demerits{
+
+        expensive to train;
+        result can be biased;
+        can be used for generating harmful content;
+    }
+
+    concerns{
+
+        hallucination: when the model generated content that are unreallistic, fictional or completely fabricated;
+
+        factuality: truthfullness of the information;
+
+        anthropomorphization: attribution of human-like qualities to non-human entities, such as AI;
+    }
+
+    eg.{
+
+        palm{
+
+            Pathway language model;
+            it is a tranformer model;
+    
+        }
+        
+        lamda{
+
+            language model for dialogue application;
+        }
+    }
+
+    for llm development, you only need prompt design;
+}
+
+prompt design vs engineering{
+
+    design{
+
+        creating a prompt that is tailored for a specific task; 
+    }
+
+    engineering{
+
+        process of creating a prompt that is designed to improve performance;
+        involve using domain-specific knowledge, providing examples of the desired output;
+    }  
+}
+
+google ai principles for responsible ai{
+
+    7 to do's{
+
+        1. be socially beneficial;
+        2. avoid creating or reinforcing unfair biases;
+        3. be built and tested for safety;
+        4. be accountable to people;
+        5. incorporate privacy design principles;
+        6. uphold high standards for scientific excellence;
+        7. be made available for uses that accord to these principles
+    }
+
+    4 to don't{
+
+        1. likely to cause overall harm;
+        2. weapons or other technologies whose principle purpose is to cause injury to people;
+        3. surveillence violating internationally accepted norms;
+        4. those who contravenes international law and human rights;
+    }
+}

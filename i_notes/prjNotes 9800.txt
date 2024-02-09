@@ -1,0 +1,495 @@
+questions{
+
+    how are the controllers connected with the ap{
+
+        physical contollers are wired;
+    }
+    are the physical controllers accessible from anywhere;{
+
+        yes, they have something that allows them to be controlled from anywhere;
+    }
+    how does cisco cloud wlc works (how is it connected to different AP);{
+
+        there is some physical device even for cloud wlc;
+    }
+
+    want to confirm, we are setting the tags and profile on the wlc for the ap (diagram is making it a little confusing);{
+
+        yes;
+    }
+    are there other profile and tag also, can we make custom tags or profiles;
+    what is tag APs;{
+
+        not confirm, but it can be a tag containing info about which ap to connect to;
+    }
+
+    what is an image, is it like image files used to build vm and containers;{
+
+        yeah, kinda similar;
+    }
+    are flex ap or say local ap configured with autonomous images;{
+
+        no flex ap are connected to a controller too;
+    }
+
+    you told something about aaa server, where is aaa server present in all of this, read about it a little in rfc;{
+
+        used for tracking clients and aps;
+    }
+    (were telling about meraki, want to know once again) how is meraki involved in all of this;{
+
+        meraki was a cloud controller with less scalibity, its now combined with the cisco controllers;
+    }
+
+    during discovery phase does the joinng starts even if one wlc is found or when all wlc are found;
+
+    autonomous image vs light weight image;
+
+    what is cisco aironet (is it some kind ap product series of cisco);
+
+
+    what are we doing, are we making and testing different profiles or writing algorithms that will run those different profiles and tags;
+
+}
+
+key words{
+
+    9800 
+    rfc documentry
+    capwap protocol
+    meraki
+    AAA, NTP servers
+
+    RU : rack unit;
+    cisco DNA, SD-access
+
+    SSID : service set identifier (SSID) is a sequence of characters that uniquely names a Wi-Fi network;
+    autonomous and lightweight images;
+
+    SSO : single sign-on, allows to sign in on diff application with one credential, eg. cisco sso;
+
+    nmsp,snmp,mse (https://mrncciew.com/2013/04/05/mobility-service-engine-mse/#:~:text=Ability%20to%20track%20the%20physical,Lightweight%20Access%20Points%20(LAPs).)
+
+    smd : standart multimode data (multimode data transfer in optical fibre)
+
+    sanet : session aware networking;
+
+    tdl : The defination language, developed by cisco, related to database;
+
+    cisco prime: a monitoring tool;
+}
+
+to-do{
+
+    search about other catalyst controllers;
+    go through osi model once more;
+
+    https://blogs.cisco.com/networking/how-evolved-ios-xe-can-help-you-achieve-operational-excellence  (contains ios xe and also crimson db)
+}
+
+mse{
+
+    mobility service engine;
+    a hardware appliance/engine;
+
+    ability to track the physical location of Network Devices, both wired and wireless, using wireless LAN controllers (WLCs) and Cisco Aironet Lightweight Access Points (LAPs);
+    provides visibility and comprehensive threat prevention for the mobility network through monitoring, alerts, classifying, and remediation of wireless and wired network vulnerabilities;
+
+
+}
+
+nmsp{
+
+    Network Mobility Services Protocol;
+
+    handles communication between controllers and the MSE;
+
+}
+
+snmp{
+
+    Simple Network Management Protocol;
+
+    it is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks;
+    for modifying that information to change device behavior;
+
+    it is used for communication between routers, switches, firewalls, load balancers, servers, CCTV cameras, and wireless devices;
+
+    protocol is used to forward wIPS alarm information from the mse to the WCS;
+    also employed to communicate rogue access point information from the WLC to WCS;
+}
+
+soap/xml{
+
+    Simple Object Access Protocol;
+
+    method of communication between the mobility services engine and WCS;
+    it is used to distribute configuration parameters to the wIPS service running on the mobility services engine;
+}
+
+wIPS{
+
+    Wireless Intrusion Prevention System;
+
+    wIPS software provides visibility and comprehensive threat prevention for the mobility network; 
+    it does it through monitoring, alerts, classifying, and remediation of wireless and wired network vulnerabilities;
+}
+
+wcs{
+
+    Wireless Control System;
+
+    network management tool that adds to the capabilities of the Web User Interface and the command-line interface (CLI);
+    to manage a network of controllers;
+    it enables you to configure and monitor one or more controllers and associated access points;
+
+    in Windows and Linux, Cisco WCS is installed as a service. The service runs continuously and resumes after a reboot;
+}
+
+rfc {
+
+    Request for Comments;
+    it is a publication in a series from the principal technical development and standards-setting bodies for the Internet;
+    most prominently the Internet Engineering Task Force (IETF);
+}
+
+cisco meraki{
+
+    Meraki was acquired by Cisco Systems in December 2012;
+    cloud-managed IT company;
+
+    products include wireless, switching, security, enterprise mobility management and security cameras, all centrally managed from the web;
+
+    allows users to manage, configure, and deploy devices, protocols, programs, etc., in the network
+}
+
+access point{
+
+    its a devices that builds a connection between wired and wireless networks;
+
+    they are often called as 'wireless routers' as they serves also as internet routers and firewalls;
+}
+
+WLC{
+
+    wireless lan controller;
+
+    it helps in managing the traffic at different access points;
+    used in large organization or company for semeless connectivity;
+
+    helps in switching between AP or say roaming;
+
+    it centralizes the management of APs;
+
+    takes care of{
+
+        authentication;
+        roaming;
+        creating new wireless n/w;
+    }
+
+    APs connected with a WLC are called LWAP(light weight AP);
+
+    a WLC can provide statics and reporting;
+
+    a WLC does not have any wireless connection;
+}
+
+ap vs wifi-router{
+
+    ap is generally used by organizations;
+    
+    all wifi-routers are to be configured seperatly unlike AP which can be configured by a centrallized router or WLC;
+    
+    wifi-router can connect to both wireless and wired device while AP are strictly for wireless devices;
+
+    wifi-router have their own dhcp and can connect directly to the modem providing internet;
+    while AP don't have their own DHCP server and can't connect to a modem directly, it is dependent on the organization's router;
+}
+
+9800-L{
+
+    its a WLC;
+
+    throughput: 5 gbps (bits)
+    AP: 250
+    client: 5000
+    os : IOS
+
+    it uses capwap protocol for connecting to a AP;
+
+    no power with ethernet;
+}
+
+IOS{
+
+    internetwork operating system;
+
+    its an os made by cisco;
+    its used in the many networking models that cisco make;
+    eg. routers, switches;
+
+    its contains a package of routing, switching, internetworking and telecommunication functionality;
+
+    its user interface is a CLI;
+}
+
+9800 series WLC{
+
+    top fetures{
+
+        always on{
+
+            it doesn't needs to be rebooted due to reasons like bug fixes, ap deployment, n/w updates, etc.;
+
+        }
+
+        secure{
+
+            comes with built-in security like secure boot, runtine defenses, image signing, hardware authenticity;
+        }
+
+        deploy anywhere{
+
+            allows for management and deployment of the controller anywhere whether its on-premise or cloud;
+        }
+    }
+
+    it supports open and programmable APIs;
+
+    it uses ios xe operating system;
+    its controllers are IOS XE based and integrates the RF Excellence from Aironet;
+    it can be deployed in physical and virtual form;
+
+    it can be managed using Cisco DNA Center, Netconf/YANG, Cisco Prime Infrastructure, web-based GUI, or CLI;
+
+    configuration model{
+
+        policy tag{
+
+            contains wlan and policy profile;
+
+            defines the broadcast domain with the properties and policies of the respective SSIDs;
+        }
+
+        site tag{
+
+            contains ap join and flex profile;
+
+            defines the roaming domain and properties of the central and remote site APs;
+        }
+
+        RF tag{
+
+            contains RF 2.4 GHz and 5 GHz profile;
+
+            defines the RF properties of the network;
+        }
+
+        tag APs;
+    }
+
+}
+
+on-premise vs cloud{
+
+    on-premise software is installed and runs on a company's own hardware infrastructure, and is hosted locally; 
+    whereas cloud software is stored and managed on the provider's servers, and accessed through a web browser or other interface;
+}
+
+CAPWAP{
+
+    control and provisioning of wireless access points;
+    protocol used between ap and wlc;
+
+    developed by cisco;
+    open protocol, not proprority;
+
+    its a improved version or say successor of LWAPP;
+
+    ap discovers and join a capwap controller;
+    configuration and firmware can be pushed from the controller;
+    encapsulates and forwards wlan client traffic between and ap and wlc;
+    helps in gathering statistics and have wireless security;
+    wlc used NTP to synchronize all ap's clock;
+
+    adds additional layer of security with Datagream transport layer security (DTLS);
+    AAA protocol is used to distribute EAP keys to the wlc;
+    EAP : it is used to pass identification/authentication information in wireless network;
+
+    ap is loaded with an light weight image to use a controller;
+
+    contol plane and data plane are present, both are UDP based;
+
+    DTLS by default is enabled for control channel and disabled for data channel;
+
+}
+
+flex APs {
+
+    configure the ap to work in a remote office without deploying a controller;
+
+    2 modes{
+
+        connected mode: wlc is reachable to the ap, capwap will work;
+        standalone moe: wlc is unreachable to the ap,
+        ap will do the work by inself;
+    }
+}
+
+
+AAA server{
+
+    other term used for it is RADIUS (Remote authentication dial-in user service);
+
+    authentication, authorization, and accounting;
+    {
+        who wants to access the network;
+        what is he allowed to access;
+        what is the user doing in the network;
+    }
+    its a server programmes that handles the user requests to access to a computer resources or network;
+
+    for an enterprise, it provides centralized authentication, authorization, and accounting management for users who connect and use a network service;
+}
+
+NTP server{
+
+    Network Time Protocol;
+
+    this protocol is used to allow network devices to synchronize their clocks with a central source clock;
+    a router or switch will run in NTP client mode, which means that it will adjust its clock based on the time of an NTP server;
+    the protocol describes the algorithm that the NTP clients use to synchronize their clocks with the NTP server and the packets that are used between them;
+
+}
+
+daemon{
+
+    a program;
+
+    a daemon (pronounced DEE-muhn) is a program that runs continuously as a background process;
+    it wakes up to handle periodic service requests, which often come from remote processes;
+
+    it is alerted to the request by the operating system (OS), and it either responds to the request itself or forwards the request to another program or process as appropriate;
+
+    common processes include print spoolers, email handlers and other programs that manage administrative tasks;
+
+    many Unix or Linux utility programs run as daemons;
+
+    it plays the role of a server in a client-server model;
+
+    they were implemented in Microsoft Windows, starting with the NT version, and are often referred to as Windows services instead of daemons;
+
+
+}
+
+ap join{
+
+    there are two phases: discovery & join;
+
+    discovery{
+
+        multiple discovery methods{
+
+            sending broadcast in the subnet;
+            previously connected wlc ips;
+            using dhcp option 43, management ip address;
+            using dns record;
+            manually configured controller ip;
+        }
+
+        any controller discovered during this phase will contain the data regarding the total no of aps already connected to the wlc and its maximum capability;
+
+        it will use all options to discover all wlc that can be discovered, even if a wlc is discovered;
+    }
+
+    join phase{
+
+        after finding all the wlc, join phase will begin if atleast 1 wlc is discovered;
+
+        priority{
+
+            will try to join a wlc thats been discovered before or configured as primary/secon/tertiary;
+
+            ap will try to join a wlc thats been configured as 'master controller';
+
+            ap will join the controller with least load;
+        }   
+
+        ones a wlc is selected for joining by an ap then it will sent a capwap join request to the wlc through the control channel;  
+    } 
+
+    the request will contain{
+
+        hardware of the ap;
+        firmware/software;
+        name;
+        amount and type of radio inside it;
+        certificate payload;
+    }
+    
+    the response by wlc will contain{
+
+        controller name;
+        model;
+        amount of aps controller support;
+        amount of aps currently connected;
+        if 'master controller' setting is enabled;
+        ap-manager ip;
+        certificate payload;
+    }
+
+    after the joining process ap will do image download and configuration check, finally registering the wlc;
+
+}
+
+dtls{
+
+    datagram transfer layer security;
+
+    just like TCP uses TLS or SSL for securing communication traffic, DTLS is used for UDP;
+
+    it is based on TLS;
+
+    designed to protect data privacy and prevent eavesdropping;
+
+    dtls in capwap{
+
+        rfc 2.4;
+
+        it is used as a tightly integrated, secure wrapper for the CAPWAP protocol;
+
+        interactions between the DTLS module and the CAPWAP module, via 'commands' (CAPWAP to DTLS) and 'notifications' (DTLS to CAPWAP);
+
+        DTLS by default is enabled for control channel and disabled for data channel;
+
+        when ap and wlc are configured to use dtls over data channel then session resemption is required to avoid reauthentication and reautherization;
+
+    }
+}
+
+
+
+tls session resumption{
+
+    in tls protocol;
+
+    a feature that allows a client and a server to reuse the cryptographic parameters of a previous TLS session, without having to perform a full handshake again;
+
+    usually attempt session resumption only when connecting to the same IP address and port number;
+}
+
+control and data channel{
+
+    both uses different port numbeers;
+    
+    control channel: A bi-directional flow defined by the ap IP Address, wlc IP Address, ap control port, wlc control port, and the transport-layer protocol (UDP or UDP-Lite) over which CAPWAP Control packets are sent and received;
+
+    data channel : same as control channel but the data packets are sent and received;
+}
+
+
+verbose ap join log{
+
+    types of message: note/err , info/debug/verbose;    
+}
