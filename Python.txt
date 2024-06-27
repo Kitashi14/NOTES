@@ -19,7 +19,7 @@ string{
     one can't modify a string using index;
     string are 'immutable' data type;
 
-    ss.index(phrase)        //for finding the starting idx of phrase in ss, throws error if not prese nt
+    ss.index(phrase)        //for finding the starting idx of phrase in ss, throws error if not present
 
     str(num)     //for converting a number(any kind) to string 
 

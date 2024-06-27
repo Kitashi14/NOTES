@@ -720,6 +720,15 @@ environment variable{
     its normalised to name env variables in ALLCAPS;
     .env files should be kept private (place .env in .gitignore);
 
+    for react{
+
+        if CRA was used as the framework then we don't need any module to use env variables;
+        variable name should start with REACT_APP_ always;
+
+        restart the server to reflect changes;
+
+    }
+
 }
 
 database {

@@ -1,0 +1,16 @@
+NEW KEYWORDS {
+
+    GENEVA;
+}
+
+TO-DO {
+
+
+}
+
+23/05/24{
+
+    TechTalk - IIoT AI/ML Hackathon Demos
+
+
+}

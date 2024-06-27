@@ -1,0 +1,285 @@
+NEW KEYWORDS{
+
+    git clean -xdf
+    git apply <diff_file> --reject
+    rm -rf polaris
+}
+
+questions{
+
+    how to check test result for void api;
+    logs not printing from the new .it file;
+
+    // get to know how to use gdb in our infra
+    //want to make a demo team directory and see if i can run the test cases
+}
+
+to-do{
+
+    see ffi functions;
+    go through swift framework once more;
+
+    learn lua language, makefile;
+
+    try using gdb once;
+    
+}
+
+ffi{
+
+    
+}
+
+using gdb{
+
+    go to the test directory in cmd;
+
+    1.      xeImage=aut ./_gen_prog_bin-aut-host_ut_cge7/ewlc_apmgr_test_dynamic --- ---f ---s test/scripts/<name>.it
+
+            ewlc_apmgr_test = PROG_NAME in makefile;
+
+    2. If you face the issue of BINOS_ROOT_FS not set then type then
+            export BINOS_ROOT_FS="/tmp/root_fs"
+            run command 1 again;
+
+    3.      export GDB=/sw/packages/gdb/8.1.2/bin/gdb-8.1.2
+
+    4. now run command 1 again to start GDB;
+
+    things to do:
+}
+
+adding ssh{
+
+    eval "$(ssh-agent -s)"
+
+    ssh-add ~/.ssh/id_ed25519
+    ssh-add ~/.ssh/id_rsa
+
+}
+
+raising pr{
+
+    commit changes;
+    git branch -m CSCwj70820.dev/pd_fresnel_integ24march            //new branch will be created
+    git push origin CSCwj70820.dev/pd_fresnel_integ24march
+}
+
+
+show commands cli{
+
+    // show gw stats ap join summary
+    // show gw stats ap join history
+
+    summary ptl model{
+    }
+
+    how do we show no. of aps, basically how to count the no. of data points in table;
+
+    loading image in /ws/ {
+
+        cd binos/linkfarm/
+        cd pmcg_universalk9-iso/
+        ls -l *.bin
+        cp CW9800-mcg-universalk9.2024-05-03_08.31_rishara2.SSA.bin /ws/sraghave-bgl/
+    }
+
+    doing telnet {
+
+        to clear testbed console{
+
+            login to console server : 
+            telnet 10.104.172.71
+
+            lab/lab
+
+            then run "clear line 38"
+        }
+
+        to load ap conf {
+
+            copy bootflash:valid-config-1-june.txt running-config
+            sh ip interface br          // check Te0/0/0, Vlan1, Vlan61
+            conf t
+            interface TenGigabitEthernet0/0/0
+            no channel-group 1 mode active
+            end
+        }
+
+        telnet 10.104.172.71 2038
+        request platform software system shell          (open linux shell)
+
+        cat /bootflash/cp1
+        chvrf 2 scp rishara2@173.39.53.161:/ws/sraghave-bgl/CW9800-mcg-universalk9.2024-05-03_08.31_rishara2.SSA.bin /bootflash/show_cmd_test_rishara2.bin
+        exit
+
+        write 
+        save
+        dir bootflash:
+        show version
+        reload
+        boot bootflash:show_cmd_test_rishara2.bin
+        miles
+        ikarem     
+        enable
+        show ?
+
+        ctrl + ]
+        q
+    }
+
+    28 -> original mac used, table entry at ap join;
+    29 -> dummy call, tdl_create wasn't commented, rest all commented;
+    30,10 ->  dummy call, all commented;
+    30,11 ->  dummy call, none commented;
+
+}
+
+show gw stats ap join summary file changes {
+
+-------------------------------------------------------------
+
+binos/mcg/common/show_cmd_handler/src/mcg_oper_show_ui.tpp
+
+ /*
+ * show ap join stats summary
+ */
+show_gw_ap_join_summary_god_op_map ::= [
+    "god_get_n_tbl_mcg_ap_join_info"    : "get_n",
+    "god_get_count_tbl_mcg_ap_join_info"    : "get_count"
+]
+
+    $green_showcmd_no_join(
+        show_cmd="show_gw_ap_join_summary_req",
+        show_response_msg="show_ap_join_summary_resp",
+        db_tdl_hdl="get_mcg_oper_db_handle()",
+        module="mcg_oper_db",
+        exec_ctx_name="mcg_oper_db_context",
+        god_op_map=show_gw_ap_join_summary_god_op_map,
+        action="mcg_sh_ap_join_summary_action",
+        show_entries_per_request="10")$
+
+-----------------------------------------------------------------
+
+binos/infra/tdl/src/mcg/mcg_oper_db_green_showcmd.tdl
+
+green_operation_def god_get_n_tbl_mcg_ap_join_info {
+} returns { }
+{
+    uses_execution_context mcg_oper_db_context;
+    navigate_to (P_tbl_mcg_ap_join_info) {
+        __get_n {}
+
+   }
+};
+
+green_operation_def god_get_count_tbl_mcg_ap_join_info {
+} returns { }
+{
+    uses_execution_context mcg_oper_db_context;
+    navigate_to (P_tbl_mcg_ap_join_info) {
+
+    __get_count {}
+
+    }
+};
+
+-----------------------------------------------------------------
+
+binos/infra/tdl/src/mcg/mcg_oper_db_ui.tdl
+
+/* show gw ap join summary */
+bundle_def show_ap_join_summary_resp {
+    message_single ui_req_msg;
+    message_multiple ui_marker_msg;
+    message_multiple ui_count_msg;
+    table_multiple tbl_mcg_ap_join_info;
+}
+
+/* show gw ap join summary */
+action_def mcg_sh_ap_join_summary_action {
+}
+
+-----------------------------------------------------------------
+
+binos/infra/ptl/src/mcg_maps.ptl
+
+map mcg_last_error_type {
+    MCG_ENM_FAILURE_DISCOVERY "Discovery";
+    MCG_ENM_FAILURE_JOIN "Join";
+    MCG_ENM_FAILURE_CONFIG "Config";
+    MCG_ENM_FAILURE_NONE "NA";
+    MCG_ENM_FAILURE_DTLS "Dtls-Handshake";
+    MCG_ENM_FAILURE_RUN "Run";
+    MCG_ENM_FAILURE_IMAGE_DOWNLOAD "Image-Download";
+    default {"Unknown"}
+}
+
+map mcg_access_point_join {
+    TDL_FALSE      "Not Joined";
+    TDL_TRUE       "Joined";
+    default {"Unknown"}
+}
+
+-----------------------------------------------------------------
+
+binos/infra/ptl/src/mcg_show_ap.ptl
+
+transform show_gw_stats_ap_join_summary
+{
+    header {
+        line simple "Number of APs" /ui_count_msg/ui_count_info/count;
+
+        subheading "Base MAC        Ethernet MAC    AP Name                           IP Address                                Status      Last Failure Phase    Last Disconnect Reason";
+        subheading "--------------------------------------------------------------------------------------------------------------------------------------------------------------------";
+        foreach /tbl_mcg_ap_join_info {
+            if (/st_mcg_ap_join_info/ap_name/len == 0 && /st_mcg_ap_join_info/ap_ip_addr/len == 0) {
+                line template "%-15s %-15s NA                                NA                                        %-11s %-21s %-37s" {
+                    value /st_mcg_ap_join_info/wtp_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_ethernet_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/is_joined* lookup(mcg.mcg_access_point_join);
+                    value /st_mcg_ap_join_info/last_error_type* lookup(mcg.mcg_last_error_type);
+                    value /st_mcg_ap_join_info/ap_disconnect_reason/vstring ;
+                }
+            }
+            else if (/st_mcg_ap_join_info/ap_name/len == 0 && /st_mcg_ap_join_info/ap_ip_addr/len != 0) {
+                line template "%-15s %-15s NA                                %-41s %-11s %-21s %-37s" {
+                    value /st_mcg_ap_join_info/wtp_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_ethernet_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_ip_addr/vstring;
+                    value /st_mcg_ap_join_info/is_joined* lookup(mcg.mcg_access_point_join);
+                    value /st_mcg_ap_join_info/last_error_type* lookup(mcg.mcg_last_error_type);
+                    value /st_mcg_ap_join_info/ap_disconnect_reason/vstring ;
+
+                }
+            }
+            else if (/st_mcg_ap_join_info/ap_name/len != 0 && /st_mcg_ap_join_info/ap_ip_addr/len == 0) {
+                line template "%-15s %-15s %-33s NA                                        %-11s %-21s %-37s" {
+                    value /st_mcg_ap_join_info/wtp_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_ethernet_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_name/vstring;
+                    value /st_mcg_ap_join_info/is_joined* lookup(mcg.ewlc_access_point_join);
+                    value /st_mcg_ap_join_info/last_error_type* lookup(mcg.mcg_last_error_type);
+                    value /st_mcg_ap_join_info/ap_disconnect_reason/vstring ;
+                }
+            }
+            else {
+                line template "%-15s %-15s %-33s %-41s %-11s %-21s %-37s" {
+                    value /st_mcg_ap_join_info/wtp_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_ethernet_mac/mac { macaddr dot; }
+                    value /st_mcg_ap_join_info/ap_name/vstring;
+                    value /st_mcg_ap_join_info/ap_ip_addr/vstring;
+                    value /st_mcg_ap_join_info/is_joined* lookup(mcg.mcg_access_point_join);
+                    value /st_mcg_ap_join_info/last_error_type* lookup(mcg.mcg_last_error_type);
+                    value /st_mcg_ap_join_info/ap_disconnect_reason/vstring ;
+                }
+            }       
+        }
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+}
+

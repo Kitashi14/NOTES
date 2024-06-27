@@ -29,7 +29,7 @@ questions{
     }
     are flex ap or say local ap configured with autonomous images;{
 
-        no flex ap are connected to a controller too;
+        yes but flex ap are connected to a controller too;
     }
 
     you told something about aaa server, where is aaa server present in all of this, read about it a little in rfc;{
@@ -43,7 +43,11 @@ questions{
 
     during discovery phase does the joinng starts even if one wlc is found or when all wlc are found;
 
-    autonomous image vs light weight image;
+    autonomous image vs light weight image;{
+
+        autonomous ap are don't need wlc and can operate themselves;
+        lwap are aps that are connected to a wlc, protocols like LWAPP, CAPWAP are used for communication;
+    }
 
     what is cisco aironet (is it some kind ap product series of cisco);
 
@@ -61,22 +65,28 @@ key words{
     AAA, NTP servers
 
     RU : rack unit;
-    cisco DNA, SD-access
+
+    airOS: https://blogs.cisco.com/networking/after-15-years-cisco-wireless-aireos-controllers-are-going-away
+
+    cisco DNA & SD-access, these are applications to manage your wireless network;
+    https://gomindsight.com/insights/blog/cisco-aci-vs-dna-whats-difference/
 
     SSID : service set identifier (SSID) is a sequence of characters that uniquely names a Wi-Fi network;
-    autonomous and lightweight images;
 
     SSO : single sign-on, allows to sign in on diff application with one credential, eg. cisco sso;
 
     nmsp,snmp,mse (https://mrncciew.com/2013/04/05/mobility-service-engine-mse/#:~:text=Ability%20to%20track%20the%20physical,Lightweight%20Access%20Points%20(LAPs).)
 
-    smd : standart multimode data (multimode data transfer in optical fibre)
+    smd : standard multimode data (multimode data transfer in optical fibre)
 
     sanet : session aware networking;
+    https://blogs.cisco.com/networking/new-software-architecture-enables-session-aware-networking-to-massively-scale-authentication-and-access-policy-control
 
     tdl : The defination language, developed by cisco, related to database;
 
     cisco prime: a monitoring tool;
+
+    polaris: internal code name for modernized IOS XE software stack for all of our enterprise routing, switching and wireless products (https://blogs.cisco.com/news/innovation-its-in-our-very-core);
 }
 
 to-do{
@@ -84,7 +94,43 @@ to-do{
     search about other catalyst controllers;
     go through osi model once more;
 
-    https://blogs.cisco.com/networking/how-evolved-ios-xe-can-help-you-achieve-operational-excellence  (contains ios xe and also crimson db)
+    https://blogs.cisco.com/networking/how-evolved-ios-xe-can-help-you-achieve-operational-excellence#:~:text=In%20evolved%20IOS%2DXE%2C%20we,operational%20consistency%20and%20network%20visibility.  (contains ios xe and also crimson db)
+}
+
+NETCONF{
+
+    network configuration protocol;
+
+    a network management protocol developed and standardized by the IETF;
+    it provides mechanisms to install, manipulate, and delete the configuration of network devices;
+    its uses an XML based data encoding for the configuration data as well as the protocol messages;
+    protocol messages are exchanged on top of a secure transport protocol;
+    its operations are realized on top of a simple RPC layer;
+}
+
+RPC{
+
+    Remote Procedure Call;
+
+    In distributed computing, a remote procedure call (RPC) is when a computer program causes a procedure (subroutine) to execute in a different address space (commonly on another computer on a shared network); 
+    it is written as if it were a normal (local) procedure call, without the programmer explicitly writing the details for the remote interaction;
+    the programmer writes essentially the same code whether the subroutine is local to the executing program, or remote;
+
+    RPCs are a form of inter-process communication (IPC), in that different processes have different address spaces;
+}
+
+YANG{
+
+    Yet Another Next Generation;
+
+    a data modeling language for the definition of data sent over network management protocols such as the NETCONF;
+    it is maintained by the NETMOD working group in the IETF;
+
+    it can be used to model both configuration data as well as state data of network elements also to define the format of event notifications emitted by network element;
+
+    it allows data modelers to define the signature of RPCs that can be invoked on network elements via the NETCONF protocol;
+    the language, being protocol independent, can then be converted into any encoding format, e.g. XML or JSON, that the network configuration protocol supports;
+
 }
 
 mse{
@@ -94,8 +140,6 @@ mse{
 
     ability to track the physical location of Network Devices, both wired and wireless, using wireless LAN controllers (WLCs) and Cisco Aironet Lightweight Access Points (LAPs);
     provides visibility and comprehensive threat prevention for the mobility network through monitoring, alerts, classifying, and remediation of wireless and wired network vulnerabilities;
-
-
 }
 
 nmsp{
@@ -149,7 +193,7 @@ wcs{
 rfc {
 
     Request for Comments;
-    it is a publication in a series from the principal technical development and standards-setting bodies for the Internet;
+    it is a publication series from the principal technical development and standards-setting bodies for the Internet;
     most prominently the Internet Engineering Task Force (IETF);
 }
 
@@ -160,7 +204,7 @@ cisco meraki{
 
     products include wireless, switching, security, enterprise mobility management and security cameras, all centrally managed from the web;
 
-    allows users to manage, configure, and deploy devices, protocols, programs, etc., in the network
+    allows users to manage, configure, and deploy devices, protocols, programs, etc., in the network;
 }
 
 access point{
@@ -226,12 +270,35 @@ IOS{
     internetwork operating system;
 
     its an os made by cisco;
-    its used in the many networking models that cisco make;
+    its used in the many networking devices that cisco make;
     eg. routers, switches;
 
     its contains a package of routing, switching, internetworking and telecommunication functionality;
 
     its user interface is a CLI;
+}
+IOS, IOS XE & IOS XR{
+
+    ios{
+
+        classical IOS is a monolithic kernel that runs all of the necessary modules in the same memory space;
+        if something happens to one module, it can cause the whole IOS kernel to crash if it runs out of memory;
+    }
+
+    ios xe{
+
+        in this IOSd runs as a system daemon on a Linux kernel;
+        Cisco also abstracted the system functions out of the main kernel and into separate processes;
+        One of the other benefits of running the kernel as a system daemon is that you can now balance the workload of the processes across multiple processor cores;
+    }
+
+    https://specialties.bayt.com/en/specialties/q/276369/what-is-the-key-difference-between-ios-ios-xe-and-ios-xr-for-cisco-devices/
+}
+
+monolithic vs microkernel{
+
+    Monolithic kernels house all components in kernel space; 
+    Microkernels separate core functionalities in kernel space from other services in user space;
 }
 
 9800 series WLC{
@@ -303,7 +370,7 @@ CAPWAP{
     protocol used between ap and wlc;
 
     developed by cisco;
-    open protocol, not proprority;
+    open protocol, not proprietary;
 
     its a improved version or say successor of LWAPP;
 
@@ -332,8 +399,7 @@ flex APs {
     2 modes{
 
         connected mode: wlc is reachable to the ap, capwap will work;
-        standalone moe: wlc is unreachable to the ap,
-        ap will do the work by inself;
+        standalone moe: wlc is unreachable to the ap, ap will do the work by inself;
     }
 }
 
@@ -350,7 +416,7 @@ AAA server{
     }
     its a server programmes that handles the user requests to access to a computer resources or network;
 
-    for an enterprise, it provides centralized authentication, authorization, and accounting management for users who connect and use a network service;
+    for an enterprise, it provides centralized authentication, authorization, and accounting management for users who connect and can use a network service;
 }
 
 NTP server{
@@ -379,8 +445,6 @@ daemon{
     it plays the role of a server in a client-server model;
 
     they were implemented in Microsoft Windows, starting with the NT version, and are often referred to as Windows services instead of daemons;
-
-
 }
 
 ap join{
@@ -468,8 +532,6 @@ dtls{
     }
 }
 
-
-
 tls session resumption{
 
     in tls protocol;
@@ -493,3 +555,20 @@ verbose ap join log{
 
     types of message: note/err , info/debug/verbose;    
 }
+
+---------------------------------------------------------------------------------------------------------------
+RECORDINGS ----------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+NEW KEYWORDS{
+
+
+}
+
+MCG recording{
+
+    
+}
+
+
+

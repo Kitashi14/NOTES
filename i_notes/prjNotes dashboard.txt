@@ -1,17 +1,64 @@
 questions{
 
-    what ETA;
-    what is DPL;
+    what is DPL, DEDT;{
 
-    what library we will be using for css, making charts;
-    are we using DRF for making rest APIs;
+        don't care much about, these terms are regularly exchanged in conversations;
+    }
 
-    What analytical information can be extracted, that we can visually present in some form like graph or pie-charts;
-    Do we haave data that are time varied can be represented to be shown in a line graph;
-    Most important data we want to show;
-    just to confirm it will not be user specific interface as no login requirement is there, everyone will see the same stuff;
+    about backend {
 
-    till what level we can go to;
+        todo: adding additional fields in aha custom pivots, accordingly change the models and db update functions, storing tree in database, making rest api, integrating them;
+
+        does the data points already present in the backend database keeps getting updated when changes are made (for example FEAT-313), how is it working;{
+
+            it updates pre-existing data, and add new data;
+        }
+
+        who will be the ultimate parents in the tree, what part of the tree is stored in the backend database;{
+
+            see orgs table;
+        }
+    }
+
+    about jira{
+
+        where are we filtering the features that are to be shown in active release;{
+
+            from jira;
+        }
+
+        where do we fetch data for an active release, aha or jira (as aha also contains all the information that we are showing currently);{
+
+            from jira;
+        }
+        some states are not matching between the data in previous dashboard and official site, FEAT-18430 FEAT-313 (some issue in updating the database);{
+
+            not updated most probably, leave it;
+        }
+        how to represent JIRA data (we can simply do it like we did for dpl metrics);{
+
+            done;
+        }
+
+        no poc_dev_manager, test_manager;{
+
+            there are some, leave it;
+        }
+        feature description in jira or not;{
+
+            no for now;
+        }
+        manager full name instead of cid in aha tables;{
+
+            for now we are using reverse mapping, but we have to look about it in future;
+        }
+
+        employee-manager table not present;{
+
+            done;
+        }
+    }   
+    
     what data is important to you, what data you want to look for when we talk about aha and jeera{
 
         for aha{
@@ -56,13 +103,27 @@ questions{
                 no, don't show him;
             }
 
-            distrubution of attributes in level 1, level 2 and rest data;
+            distrubution of attributes in level 1, level 2 and rest data;{
+
+                leave it at it is for now;
+            }
+            
+            which tag is related to jira;{
+
+                seems like all tags can be transferred to jira;
+            }
+
             possible design changes;
-            which tag is related to jira;
             
         }
     }
 
+    to-do/ask{
+
+        invalid dates in loc table;
+        mismatch in pr review number (rbraj example);
+        sync date range for custom segment;
+    }
 
 
 }
@@ -189,4 +250,12 @@ design ideas{
         different hyperlink;
         feature type;
     }
+}
+
+
+ttr{
+
+    pipenv shell;
+
+    rishav,rishav14!
 }
