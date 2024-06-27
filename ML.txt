@@ -1,6 +1,14 @@
 NEW KEYWORDS{
 
-    hyperparameter;
+    explicit programming{
+
+        defining every possibility;
+    }
+
+    don't use machine learning when simple procedural coding can be used;
+
+    hyper parameters of models;
+
 }
 
 tools{
@@ -14,6 +22,76 @@ tools{
 
     websites : ml-playground,com;
 }
+
+evolution of data{
+
+    spreadsheets  --> relational data --> big data (non-relational)
+
+    as analysing these big amount of data was not possible for humans thats why ML came to picture; 
+}
+
+AI {
+
+    any method that mimics human behaiviour is called artificial intelligence; 
+
+    Narrow AI{
+
+        good at one task;
+        different from general AI;
+    }
+}
+
+
+ML{
+
+    using algorithms to learn about differnt patterns in data and then using that algorithm to predict about future using similar data;
+
+    it works of experience basis;
+    the more the model has experience the better it becomes;
+
+    it is a part/subset of AI;
+
+    problem with ML was that it was not completely intelligent
+    as we human have to provide proper data/features to the programme to learn; 
+
+    deep learning as the rescue;
+}
+
+
+Deep Learning {
+
+    DL in subset of ML (which was the subset of AI);
+    the idea was inspired by human brain; 
+
+    programme itself generate data/features to learn;
+
+    using neural network;
+}
+
+Neural network {
+
+    artificial neural network = has single hidden layer;
+    deep neural network = has multiple hidden layer;
+}
+
+
+three parts of Machine Learning{
+
+    data collection;
+
+    data modelling{
+
+        problem defining ;
+        data (what data we have);
+        evaluation (what defines success);
+        features (what features should we model);
+        modelling (what kind of model should we use);
+        experiments (what else we can try);
+    }
+
+    deployment;
+}
+
 
 categories{
 
@@ -54,10 +132,67 @@ categories{
     }
 }
 
-defination of ML{
 
-    using algorithms to learn about differnt patterns in data and then using that algorithm to predict about future using similar data;
+problem types {
 
-    it works of experience basis;
-    the more the model has experience the better it becomes;
+    supervised, unsupervised, transfer, reinforcement;
+
+    supervised vs unsupervised{
+
+        in supervised learning data and label is predefined;
+        classification and regression comes under this;
+
+        in unsupervised learning label is not defined and the algorithm find clusters itself and label them;
+
+    }
+
+    transfer learning{
+
+        using previous model and modifying it to make new model as per problem;
+    }
+
+    reinforcement learning{
+
+        using score method for learning;
+    }
+
+    classification problem{
+
+        sorting data in the available limited classes;
+        binary and multiple class classification;
+    }
+
+    regression problem{
+
+        continous value; 
+        output value not limited;
+    }
+
 }
+
+data type{
+
+    structured data{
+
+        data in similar format;
+
+        eg. tables,etc;
+    }
+    unstructured data: images, audio, etc.
+
+    static vs streaming data{
+
+        static: doesn't changes with time;
+
+        streaming: changes over time;
+            eg. stocks;
+
+        normally we start with static data to streaming data;
+    }
+}
+
+features{
+
+    numerical and categorical features;
+}
+
