@@ -1,0 +1,432 @@
+ project{
+
+    develops a web application with user interface to prompt out whether a patient is prone to CDK or not;
+    using ML;
+
+    the problem comes under the category of classification problem;
+
+    so will use different Classification Algorithms (RF, DT, LR, SVM, KNN);
+
+    model will be trained with data set and using K Fold Cross validation method the datasets will be partitioned into training and testing data;
+
+    objective{
+
+        1. investigate the optimal number of features required for diagnosis from the top ranked features.
+        2. identify best combination of classifier and selected features with and without ensembling;
+        3. finally develop a web application for diagnosing the risk factor of kidney with higher accuracy and lower cost of computations employing the identified features and classifier combination;
+    }
+}
+
+chronic kidney disease{
+
+    Longstanding disease of the kidneys leading to renal failure;
+    occurs when a disease or condition impairs kidney function, causing kidney damage to worsen over several months or years;
+
+    Diabetes and high blood pressure are the most common causes of chronic kidney disease;
+
+    a significant problem with a steady rate of growth; 
+    Because a person may only survive without their kidneys for an average of 18 days, dialysis and kidney transplants are in great demand;
+}
+
+renal failure{
+
+    inability of the kidneys to perform excretory function leading to retention of nitrogenous waste products from the blood;
+}
+
+
+data set{
+
+    http://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease
+
+    This dataset has 400 observations and 25 variables. (250 ckd, 150 notckd)
+
+        age: age in years
+        bp: Blood pressure in mm of Hg.
+        sg: Specific Gravity
+        al: Albumin - (0,1,2,3,4,5)
+        su: Sugar - (0,1,2,3,4,5)
+        rbc: Red Blood Cells - (normal,abnormal)
+        pc: Pus Cell - (normal,abnormal)
+        pcc: Pus Cell clumps - (present,notpresent)
+        ba: Bacteria - (present,notpresent)
+        bgr: Blood Glucose Random(numerical) in mgs/dl
+        bu: Blood Urea in mgs/dl
+        sc: Serum Creatinine in mgs/dl
+        sod: Sodium in mEq/L
+        pot: Potassium in mEq/L
+        hemo: Hemoglobin in gms
+        pcv: Packed Cell Volume
+        wbcc: White Blood Cell Count in cells/cumm
+        rbcc: Red Blood Cell Count in millions/cmm
+        htn: Hypertension - (yes,no)
+        dm: Diabetes Mellitus - (yes,no)
+        cad: Coronary Artery Disease - (yes,no)
+        appet: Appetite - (good,poor)
+        pe: Pedal Edema - (yes,no)
+        ane: Anemia - (yes,no)
+        class: Class - (ckd,notckd)
+
+    Machine learning can be used to predict a positive CKD status and the stages of CKD;    
+
+    To get the best features, we can use feature Selection methods like the Fisher score, correlation, mean absolute difference, chi square, mutual information, etc;
+    
+    After evaluating the outcomes of several models, we can check which classifier is giving best result/accuracy/outcome;
+    We will also check which set of features/input/dataset have best label/outcome;
+
+}
+
+Data Pre-processing {
+
+    Preparing and manipulating raw data into a format appropriate for analysis and machine learning algorithms is known as data preprocessing in machine learning;
+
+    data cleaning {
+
+        we will find and correct abnormalities or issues with the data, such as missing numbers, duplicate data, outliers(data points that are significantly different from the rest of the dataset), and formatting errors, this is known as data cleaning;
+    }
+    
+    then we will do Data transformation {
+
+        Data transformation comprises changing the data's format so that it is easier to examine, such as by scaling or normalising numerical data, encoding categorical data, or reducing the data's dimensionality;
+    }
+
+    data integration{
+
+        Merging information from many sources while ensuring its accuracy and compatibility;
+    }
+
+    data reduction{
+
+        This technique involves selecting a subset of important features from the data in order to reduce the computational complexity of the model and avoid overfitting;
+        this will be further done in feature analysis;
+    }
+}
+
+Feature analysis {
+
+    The process of analyzing a dataset's input features to comprehend their significance and effect on a prediction model's performance;
+
+    The following steps are included in the feature analysis process{
+
+        1. Feature Selection: Select relevant features that have the greatest influence on the target variable.
+        2. Feature engineering: It is the process of integrating, scaling, or modifying existing features to produce new features.
+        3. Feature importance ranking: Ranking the attributes according to how important or helpful they are to the predictive model.
+        4. Feature visualization: Visualize the feature data to search for trends, outliers, or relationships.
+    }
+
+}
+
+Feature Selection {
+
+    selects a subset of the initial features to decrease the feature space as effectively as possible while still meeting the criteria;
+
+    The role of feature selection in machine learning {
+
+        1. To reduce the dimensionality of feature space.
+        2. To speed up a learning algorithm.
+        3. To improve the predictive accuracy of a classification algorithm.
+        4. To improve the comprehensibility of the learning results.
+    }
+
+    different algorithms that we can use are {
+
+        1. Filter techniques
+        2. wrapping techniques
+        3. Embedded techniques
+    }
+
+}
+
+filter methods{
+
+    loop {
+        
+        Set of all features; 
+        Selecting a subset; 
+        Learning algorithm; 
+        Performance;
+    }
+    
+}
+
+Classification Algorithms {
+
+    a variety of classifiers are utilized to evaluate their prediction performance like Random Forest classification, SVM (SVM), K-Nearest Neighbor, LR, Decision Tree, etc.;
+
+    techniques like{
+
+        Random forest {
+
+            a machine learning algorithm that belongs to the family of ensemble learning methods;
+            a popular method for both classification and regression tasks;
+
+            the steps involved in Random Forest classification{
+
+                1. Data preparation: This step involves cleaning and pre-processing the data set for analysis.
+                2. Feature selection: This step involves selecting a subset of the most relevant features for the analysis.
+                3. Splitting the data: The data set is then split into a training set and a testing set using the K-fold cross validation technique.
+                4. Building decision trees: Multiple decision trees are built on the training data using a random subset of features and observations.
+                5. Combining the decision trees: The outputs of the individual decision trees are then aggregated to make a final prediction.
+                6. Evaluating the model: The performance of the model is evaluated on the testing set using metrics such as accuracy, precision, recall, and F1 score.
+            }
+
+            ability to handle high-dimensional datasets as well as its ability to handle missing data and outliers;
+            less prone to over- fitting compared to decision trees, since the aggregation of multiple decision trees helps to reduce the variance of the model;
+
+        }
+
+        SVM{
+
+            SVM (support vector machine) classification is a popular machine learning algorithm that is widely used for classification tasks; 
+            SVM works by finding the hyperplane that maximally separates two classes of data in a high-dimensional space;
+            
+            steps involved{
+
+                1. Data preparation: This step involves cleaning and pre-processing the datasets for analysis.
+                2. Feature selection: This step involves selecting a subset of the most relevant features for the analysis.
+                3. Splitting the data: The datasets is then split into a training set and a testing set using the K-fold cross validation technique.
+                4. Training the SVM model: The SVM model is trained on the training set by finding the hyperplane that maximally separates the two classes of data. There are different types of SVM models, including linear SVM, polynomial SVM, and radial basis function (RBF) SVM.
+                5. Evaluating the model: The performance of the SVM model is evaluated on the testing set using metrics such as accuracy, precision, recall, and F1 score.
+
+            }
+
+            ability to handle high-dimensional datasets and its ability to handle non-linearly separable data using kernel functions;
+            less prone to over-fitting compared to some other machine learning algorithms;
+
+            demerit : SVM classification can be computationally expensive for large datasets, and the selection of the appropriate kernel function and hyperparameters can require some trial and error;
+        }
+
+        K-Nearest Neighbor{
+
+            a popular machine learning algorithm that is widely used for classification tasks; 
+            a type of instance-based learning, where new instances are classified based on their similarity to the nearest neighbor in the training data;
+
+            steps involved{
+
+                1. Data preparation: This step involves cleaning and pre-processing the datasets for analysis.
+                2. Feature selection: This step involves selecting a subset of the most relevant features for the analysis.
+                3. Splitting the data: The datasets is then split into a training set and a testing set using the K-fold cross validation technique.
+                4. Choosing the value of K: The value of K, which is the number of nearest neighbors used for classification, is chosen.
+                5. Finding the K nearest neighbors: For each new instance in the testing set, the K nearest neighbors in the training set are found based on their similarity to the new instance.
+                6. Classifying the new instance: The new instance is then classified based on the class labels of the K nearest neighbors. This can be done using a majority vote, where the class with the most votes among the K nearest neighbors is selected.
+                7. Evaluating the model: The performance of the KNN model is evaluated on the testing set using metrics such as accuracy, precision, recall, and F1 score.
+
+            }
+
+            known for its simplicity and ease of implementation;
+            it is also a nonparametric method, which means that it makes no assumptions about the underlying distribution of the data;
+
+            demerit : can be computationally expensive for large datasets, and the choice of the value of K can have a significant impact on the performance of the model;
+        }
+
+        LR{
+
+            Linear regression is a popular machine learning algorithm used for binary classification tasks i.e. tasks where the outcome is either 0 or 1;
+            algorithm is based on a logistic function that maps input features to the probability of the output being 1;
+
+            steps involved{
+
+                1. Data preparation: This step involves cleaning and pre-processing the data set for analysis.
+                2. Feature selection: This step involves selecting a subset of the most relevant features for the analysis.
+                3. Splitting the data: The datasets is then split into a training set and a testing set using the K-fold cross validation technique.
+                4. Training the LR model: The LR model is trained on the training set by optimizing the model parameters to minimize the cost function. The cost function measures the difference between the predicted output and the actual output.
+                5. Evaluating the model: The performance of the LR model is evaluated on the testing set using metrics such as accuracy, precision, recall, and F1 score.
+
+            }
+
+            it is known for its simplicity and interpret-ability;
+            it can be used for both linear and non-linear classification tasks;
+            performs well when the datasets are linearly separable;
+
+            demerit :  LR assumes that the relationship between the input features and the output is linear, which can limit its performance for complex datasets
+
+        }
+
+        Decision Tree{
+
+            a popular machine learning algorithm used for classification tasks;
+            it works by recursively partitioning the datasets into smaller subsets based on the values of the input features until each subset contains instances of the same class;
+
+            steps involved{
+
+                1. Data preparation: This step involves cleaning and pre-processing the datasets for analysis.
+                2. Feature selection: This step involves selecting a subset of the most relevant features for the analysis.
+                3. Splitting the data: The datasets is then split into a training set and a testing set using the K-fold cross validation technique.
+                4. Building the decision tree: The decision tree is built on the training set by recursively partitioning the data based on the values of the input features. The goal is to create a tree that minimizes the impurity of the nodes, which can be measured using metrics such as entropy or Gini impurity.
+                5. Pruning the decision tree: The decision tree can be pruned to avoid over-fitting by removing branches that do not significantly improve the performance of the model.
+                6. Evaluating the model: The performance of the decision tree model is evaluated on 
+                the testing set using metrics such as accuracy, precision, recall, and F1 score.
+            }
+
+            known for its simplicity and interpret-ability;
+            can handle both categorical and numerical data and can also handle missing values;
+            
+            demerit : 
+                        can be prone to over-fitting, especially if the tree is too deep or if the datasets is noisy;
+                        can be sensitive to the order of the input features, which can affect the structure of the tree
+        }
+    }
+    
+}   
+
+performance analysis{
+
+    involves evaluating the model's accuracy and effectiveness in making predictions on new, unseen data;
+
+    commonly used techniques for performance analysis of machine learning models{
+
+        accuracy{
+
+            commonly used metric for classification problems;
+            it measures the percentage of correctly classified instances in the test data.
+
+            accuracy = (tp + tn)/(tp+tn+fp+fn);
+
+        }
+
+        precision and recall{
+
+            Precision and Recall are metrics used for evaluating binary classification models. Precision measures the fraction of true positives out of all predicted positives, while recall measures the fraction of true positives out of all actual positives.
+
+            precision = tp/(tp+fp);
+            recall = tp/(tp+fn);
+        }
+
+        F1 score{
+
+            F1 score is a combination of precision and recall, providing a single score those balances both measures;
+            
+            F1 score = (2*(precision*recall))/(precision + recall);
+        }
+
+        Confusion matrix{
+
+            A confusion matrix is a table that summarizes the number of correct and incorrect predictions for each class in the test data;
+        } 
+    }
+}
+
+ensemble learning {
+
+    it is utilized in machine learning to obtain more accurate predictions than individual models by combining the outputs of several single classification models;
+
+    techniques used{
+
+        voting{
+
+            combines the predictions of multiple models using a majority vote;
+            in binary classification, the voting classifier outputs the class that receives the most votes;
+
+            multi-class classification, the voting classifier can use different strategies like {
+
+                a. Hard voting: The voting classifier outputs the class with the most votes.
+                b. Soft voting: The voting classifier outputs the class with the highest probability, averaged over all the models.
+                c. Weighted voting: The voting classifier assigns different weights to the predictions of each model, based on their performance on a validation set.
+
+            }
+
+            simple to implement and can be trained quickly;
+            can also be used with a wide range of models, including models with different architectures and hyperparameters;
+
+            demerit : can be sensitive to the quality and diversity of the individual models and may not always improve the performance of the best individual model;
+        }
+
+        stacking{
+
+            involves training multiple models (often of different types) and then training a meta-model on the predictions of these models;
+            the idea behind stacking is to combine the strengths of different models and overcome their weaknesses;
+
+            process{
+
+                a. Partition the training data into two or more subsets.
+                b. Train different base models on each subset of the training data.
+                c. Use the base models to make predictions on a validation set (which is different from the training set).
+                d. Combine the predictions of the base models into a new feature matrix.
+                e. Train a meta-model on the new feature matrix, using the actual class labels from the validation set.
+            }
+        }
+    }
+
+    Ensemble learning can be a powerful technique for improving the performance of machine learning models, especially when dealing with complex datasets;
+
+    demerit : can be computationally expensive and may require more resources than individual models.
+
+}
+
+existing models {
+
+    1. RenalNet: A deep learning model developed by Google Health that uses medical imaging and clinical data to predict CKD.
+    2. DeepCKD: A Convolutional neural network (CNN) developed by researchers at the University of California that uses laboratory measurements and clinical data to predict CKD.
+    3. KidneyIntelX: A machine learning platform developed by Renalytix AI that uses blood- based biomarkers and other clinical data to predict the progression of CKD.
+    4. NephroNet: A deep learning model developed by researchers at the University of California that uses electronic health record (EHR) data to predict CKD and its complications.
+    5. CKD-PC: A machine learning model developed by researchers at Stanford University that uses EHR data to predict the risk of developing CKD.
+}
+
+regression problem statement{
+
+    regression problems involve predicting a continuous numerical output or target variable;
+    the goal is to find a function that maps input features to a continuous value;
+
+    eg. include predicting house prices based on features like square footage and location, estimating a person's age based on demographic information, and forecasting stock prices.
+}
+
+K-fold cross validation technique {
+
+    K-fold cross-validation is a widely used technique in machine learning and statistical modeling for assessing the performance and robustness of a predictive model;
+    It helps in estimating how well a model will generalize to an independent dataset;
+
+    can be used for dataset of small size;
+
+    steps {
+
+        1. The training dataset is divided into K roughly equal-sized subsets or "folds." Each fold contains approximately 1/K of the total data;
+        2. The model training and evaluation process is repeated K times. In each iteration, one of the K folds is used as the validation set (also known as the holdoutset), while the remaining K-1 folds are used for training;
+        3. In each iteration, the model is trained on the K-1 folds and then tested on the validation fold. This yields K different performance scores, one for each iteration.
+        4. After completing all K iterations, the K performance scores are usually averaged to produce a single evaluation metric, such as accuracy, precision, recall,F1-score, or mean squared error. This average metric provides an estimate of how well the model is likely to perform on unseen data
+    }
+
+    Advantages of K-fold cross-validation{
+
+        Provides a more reliable estimate of model performance compared to a single train-test split.
+        Helps in assessing how well a model generalizes to different subsets of data.
+        Reduces the risk of overfitting because it evaluates the model on multiple independent validation sets.
+    }
+
+
+}
+
+over vs under-fit{
+
+    overfit{
+
+        Overfitting occurs when a machine learning model learns the training data too well, capturing noise and random fluctuations in the data rather than the underlying patterns. As a result, an overfit model performs exceptionally well on the training data but poorly on unseen data;
+
+        causes{
+
+            complex model;
+            lack of sufficient data;
+            too many features;
+            noisy data;
+        }
+    }
+
+    underfit{
+
+        Underfitting is the opposite problem of overfitting. It occurs when a machine learning model is too simple to capture the underlying patterns in the training data. An underfit model performs poorly on both the training data and unseen data;
+
+        causes{
+
+            overly simple data;
+            insufficient training;
+        }
+    }
+}
+
+noisy dataset{
+
+    when collecting data, and data collection instruments may be unreliable, resulting in dataset errors; 
+    the errors are referred to as noise; 
+    data noise in machine learning can cause problems since the algorithm interprets the noise as a pattern;
+    
+}
+
+

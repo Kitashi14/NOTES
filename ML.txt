@@ -7,7 +7,7 @@ NEW KEYWORDS{
 
     don't use machine learning when simple procedural coding can be used;
 
-    hyper parameters of models;
+    hyper parameters of models, parameters that are present in different algorithms like no. of iterations, etc.;
 
 }
 
@@ -110,7 +110,7 @@ categories{
 
         data are not labeled, no features are specified;
         we don't have any specific output for the given input data points;
-        it is used for exploratory data analysis and finding hidden patterns/features or groups in data;
+        it is used for exploratory data analysis and finding hidden patterns/features/labels in data;
         
         types{
 
@@ -119,7 +119,7 @@ categories{
         }
     }
 
-    reinforcement learing{
+    reinforcement learning{
 
         using reward and punishment system;
         eg. playing a game;
@@ -194,5 +194,16 @@ data type{
 features{
 
     numerical and categorical features;
+
+    derived features, features made from available features;
+}
+
+splitting of data{
+
+    data is generally split into training and test data;
+    there can be a 3 part devision, including validation data for fine tuning the model;
+
+    start first and build up, if you have large data then use a portion of it for a model and see how it goes;
+    when comparing models, use same set of data for training and testing the model;
 }
 

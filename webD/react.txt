@@ -8,6 +8,8 @@ NEW KEYWORDS {
 client side vs server side{
 
     These two terms are used in the context of web. Client-side means that the JavaScript code is run on the client machine, which is the browser. Server-side JavaScript means that the code is run on the server which is serving web pages.
+
+    https://www.geeksforgeeks.org/server-side-rendering-vs-client-side-rendering-vs-server-side-generation/
 }
 
 server {
@@ -15,8 +17,20 @@ server {
     A server is a computer program or device that provides a service to another computer program and its user, also known as the client. In a data center, the physical computer that a server program runs on is also frequently referred to as a server.
 }
 
-React is csjs while Node is ssjs.
-its a front-end JavaScript library;
+react{
+
+    its a front-end JavaScript library;
+    while it’s not a framework, React does have a dedicated framework called Create React App that can be used to build web applications;
+    created by Facebook in 2011 and then open-sourced in 2013;
+}
+
+Create React App (CRA){
+
+
+    react has a dedicated framework called Create React App (CRA); 
+    it includes file structuring and other tools so that React could be used as a framework;
+}
+
 
 if condition in js{
 

@@ -258,7 +258,7 @@ X11 {
     refers to the 11th edition of the X Window System;
     an open source graphics protocol developed in the early days of the internet; 
     its also contains software package and network protocol;
-    a windowing system for bitmap displays
+    a windowing system for bitmap displays;
     common on Unix-like operating systems (eg. macOS, any linux os); 
     it not the part of the os;
 
@@ -301,7 +301,7 @@ X11 {
         eg. KDE & GNOME;
     }
 
-    all three programs i.e. Xserver, window manager and desktop env are modular programs so one use different combination based the their mutual compatibility;
+    all three programs i.e. Xserver, window manager and desktop env are modular programs so one use different combination based their mutual compatibility;
 
     most importantly it lets you interact locally, using your personal computer's display, mouse, and keyboard, with the graphical user interface (GUI) of an application running on a remote networked computer;
 }

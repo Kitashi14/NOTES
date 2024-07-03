@@ -28,6 +28,17 @@ library vs framework{
     framework>library>modules
 
     framework is more larger and close to the base code, it tries to provide everything while library focuses on a particular area;
+
+    https://builtin.com/software-engineering-perspectives/react-framework
+
+    differences{
+
+        Frameworks provide ready-to-use tools, standards and templates for fast application development, while libraries don’t;
+        Frameworks control the calling of libraries for our code;
+        Frameworks give rules and guidelines on writing your code and structuring files and folders;
+        Frameworks are consistent with APIs, compilers, toolsets and libraries within;
+        When you use a framework, the control is inverted. The framework controls the flow and calls your code. In contrast, libraries let you control the flow of the application;
+    }
 }
 
 hypervisor{

@@ -1,0 +1,371 @@
+NEW KEYWORDS/KEYPOINTS {
+    
+    primitive and composite data-type;
+    'auto';
+    nincompop;
+    using cout and printing take hell lot of time and can give u TLE;
+}
+
+Notes {
+
+    permutation sequence{
+
+        a sequence is called permutation if it contains all integer from 1 to 'N' exactly once;
+    }
+}
+
+A-vector{ 
+    
+
+    dynamic sized array;
+    in java same behaiviour is shown by ArrayList;
+
+    vector<int> v; //empty vector of integers;
+    vector<int> v(10); //vector of integers with 10 elements (all 0 by default);
+    vector<int> v (6, 'h'); //vector of characters with 6 elements (all 'h');
+    vector<int> ({43,23,2,32,4});
+    vector<int> v = {2,23,4,23,5442};
+
+    v.push_back(x) //insert x; 
+    v.pop_back() //erase the last element;
+    v.clear() //erase all elements;
+    v.size() //returns the size of the vector;
+
+    v.resize(x,y) //resize the vector;
+
+    v.empty()  //returns a boolean value;
+
+    sort(v.begin(),v.end()); //sort the vector;
+    //v.begin() and v.end() are iterators
+
+    //for more go to MIPT class13
+
+    min_element(v.begin(),v.end())
+    
+}
+
+B-sort(){
+
+    SIMILAR STUFF WITH reverse();
+
+    function used to sort array, vector and a string;
+    gcc_sort
+
+    uses a mixture of (
+        quick sort algo;
+        insertion sort algo;
+        heap sort algo;
+    )
+
+    int a[n];
+    sort(a,a+n); //pointer of first element to the element present after the last element of array; 
+    sort(a,a+k); //sort first k elements
+
+    vector<int> v;
+    sort(v.begin(),v.end());
+    sort(v.begin()+k, v.end());
+
+    string s;
+    sort(s.begin(),s.end());
+
+    sort(a.begin(),a.end(),greater<datatype>()); //sort in descending order
+    sort(arr,arr+n,greater<int>()); //sort in descending order
+    sort(arr,arr+k,greater<int>());  //sort first k elements in descending order
+
+
+    bool comparator_function_name(int i, int j){
+        return i<j;
+    }
+
+    sort(a.begin(),a.end(),comparator_function_name);       //sort according to the comparator function
+}
+
+C-pair{
+
+    a way of creating composite-datatype composed of 2 diffent primitive/composite datatype;
+
+    useful for returning multiple values from a function;
+
+    pair<int,int> p; // a pair of 2 int;
+    pair<int,string> p; // a pair of an int and a string;
+    pair<int, pair<int,string>> p; // a pair of int and a pair;
+    pair<vector<int>,string> p; // a pair of a (vector of int) and a string;
+
+    pair.first;
+    pair.second;
+
+    sort(p,p+n) // sorting done on the basis of first value if tie then on the basis of second value;
+
+}
+
+D-iterators {
+
+    behave same as pointers;
+    vector<int>::iterator it = v.begin();
+
+}
+
+E-sets{
+
+    a container which keeps "unique" copy of every element in "sorted" order;
+    (in java similar to "TreeSet");
+
+    set<int> s;         //empty set of integers;
+    set<string> s;      //empty set of strings;
+
+    *a set can be made mainly of integer, string and char;
+    a set/map of pair can't be made directly; 
+
+    s.insert(x);       //insert x only if not present earlier; 
+    s.erase(x);         // erase x only if present;
+    s.count(x);         //return 1 or 0 if present or absent resp;
+    s.clear();          //erase all elements;
+    s.size();           // return the current size of the set 
+
+    ***execpt s.size() and s.clear() all O(log N), s.size() is of TC O(1) and s.clear() is of TC O(n);
+
+    s[0] doesn't works here unlike array, vector, string etc.;
+
+    Set iterators{
+
+        auto it = s.begin();
+        s.begin()  //iterator to the first element;
+        s.end()    //iterator to the non exising element;
+
+        it++       // these type of operations also takes O(logN) time
+                   // as set uses a veriour complex data structure (red and black trees) 
+        ** (it+5  OR  it+=2  are not VALID in case of an iterator);
+        
+        Set iterator related func{
+
+            s.find(x);  // if present returns the iterator of the location, if not present then returns s.end();
+
+            s.lower_bound(x); // returns iterator to the first element that is not smaller than 'x'
+            s.upper_bound(x);   // returns iterator to the first element that is greater than 'x'
+            // if no such element present than return s.end();
+
+            s.erase(x);  //erase the element 'x'
+            s.erase(it);  //erase the element pointed by iterator 'it'
+
+            **all takes O(logN) time
+        }
+
+    }
+
+    set<int,greater<int>> s;  // store in descending order.
+
+}
+
+E-auto{
+
+    'auto' keyword for detecting the data type automatically;
+    used in C-3 B-5;
+    
+    this keyword is not specially present in bits/stdc++.h only rather anywhere;
+}
+
+
+F-String{
+
+    string str;  // empty string
+    string str1(5, 'n');
+    getline(cin, str); // for taking input of a sentence, input data replaces with data stored in str
+
+    str1.append(str2);
+    OR str1 = str1 + str2;
+
+    str.clear();
+    str.compare(); returns difference in ASCII value
+    str.empty(); returns boolean value
+    str.size(), str.length();   returns the size;
+
+    sort(str.begin(), str.end(), greater<char>()); //sort in descending order, not only for string;
+
+    str.erase(starting_idx, no_of_char_to_delete);
+
+    str.find(string_to_search);  // returns the index of the starting letter if present
+
+    str.insert(position_of_idx_to_insert, string_to_insert);
+
+    str.substr(starting_idx, size of substr);
+    str.substr(starting_idx);	
+
+    int x = stoi(s); //converting integer number string to integer type
+    string s = to_string(3.534) // converting num to string
+
+    //breaking input  using string stream
+    stringstream ss(str);
+    string word;
+    ss>>word;
+    cout<<word<<endl;
+    ss>>word;
+    cout<<word<<endl;
+    ss>>word;
+    cout<<word<<endl;
+	 
+}
+
+
+Map{
+    a special type of array where the indices(key) can be negative or even a string;
+    it is stored in pairs of 'key' and 'value'
+
+    the keys will be unique and in ordered way;
+   
+    if multiple pairs are inserted with same key then the first pair will only be considered;
+   
+    value of the key can be changed through its reference which we can get with the help of key;
+    m[key] = new_value;
+    
+    they are like dictionary in python;
+    key of a map can be many data type but had to mention it;  
+    
+    map<key_datatype,value_datatype> m;
+
+    m.clear(); // clear entire map
+    m[key]      //value of element with key O(logN);
+    m.insert(make_pair("key","value"));
+    m.count(key); // returns 1 or 0
+    m.find(key);    // returns iterator of the pair with given key if present 
+
+    m.erase(key);   //erase the pair with this 'key', if no such key present in map then it skips;
+    m.erase(it);    //erase the pair with iterator 'it', if so such iterator present for map then error happens;
+
+    m.lower_bound(key);
+
+    (*it) gives a pair of {key,value} instead of giving the value; 
+}
+
+Unordered Map{
+
+    like map only store unique keys;
+    keys not stored in ordered sequence;
+    
+    uses hashing so for finding, adding and deleting a key-value pair TC is O(1);
+
+    unordered_map<string, string > umap;
+    umap["key"] = "value";
+    umap.insert(make_pair("key","value"));
+
+    umap.find(key); {
+
+        //retuns the iterator of the position;
+        //returns umap.end() if key not present;
+    }
+    umap.count(); //no of elements present in 
+
+    unordered_map<string, string>:: iterator itr;
+    itr = umap.find(key);
+    cout<<itr->first<<endl;
+}
+
+stack{  
+
+    uses LIFO mechanism;
+    can access only the top element;
+
+    stack<int> s;
+
+    s.empty();
+    s.size();
+    s.top();
+    s.push(a);
+    s.pop();
+    // All above functions in O(1);
+
+    s1.swap(s2);  //swapping two stack of same type, size may vary;  TC= O(1), SC=O(n);
+}
+
+queue{
+
+    uses the FIFO mechanism;
+    can access the first element only;
+
+    queue<int> q;
+
+    q.empty();
+    q.size();
+    q.front();  // return a reference to the first element of the queue
+    q.push(a);
+    q.pop();
+
+    q.back(); // return a reference to the last element of the queue
+
+    q1.swap(q2);  //swapping two queue of same type, size may vary;  TC= O(1), SC=O(n);
+}
+
+deque{
+
+    its like a combination of stack and queue.
+    elements can be pushed and poped from either ends.  
+    unlike vector contagious memory is not garaunteed;
+
+    deque<int> dq;
+    dq.push_front(a);
+    dq.push_back(b);
+    dq.pop_front(c);
+    dq.pop_back(d);
+
+    dq.clear();  //remove all elements
+    dq.size();
+    dq.empty();
+
+    dq.erase(it);  //delete the element of the specified iterator
+    dq.erase(it1,it2);  //delete the range of elements of the specified itertors
+}
+
+priority_queue{
+
+    its one of the data structure present in the stl library of cpp;
+    it uses the concept of heap to make max_heap and min_heap;
+
+    priority_queue<int> pq;     // by default it makes a max heap
+
+    //creating min_heap
+    priority_queue<int, vector<int>, greater<int>> mpq;
+
+    method are same as present in a normal queue of cpp stl lib;
+}
+
+
+for(auto e : b){
+
+    b can be {
+        array,
+        vector,
+        deque,
+        set,
+        multiset,
+        unordered_set,
+        list,
+        map,
+        unordered_map
+    }
+
+    b can't be{
+        linked list,
+        stack,
+        queue
+    }
+}
+
+random access {
+    access the ith element directly;
+
+    can be done in {
+        array;
+        arr[i];
+
+        vector;
+        v[i];
+
+        string;
+        s[i];
+    }
+}
+
+
+
+
+
+
