@@ -21,6 +21,10 @@ NEW KEYWORDS{
     npl: natural language processing;
 
     Responsible AI;
+
+    knowledge cuttoff: llm having knowledge of stuff only till the time it was trained;
+
+    hallucination;
 }
 
 to-do{
@@ -51,7 +55,7 @@ genAI{
 deep learning{
 
     it uses neural networks;
-    it uses semi-supervised learning i.e. both supervised and unsupervised data is used for learning;
+    it uses semi-supervised learning i.e. both supervised(most part) and unsupervised data is used for learning;
 
     deep learning models can be categorized into 2 types{
 
@@ -76,7 +80,7 @@ neural networks{
 llm{
 
     large language models;
-    its a subset of deep learning; 
+    its build using self-supervised learning with deep learning;
 
     these are models that are pre-trained and can be fine-tuned for specific purposes;
 
@@ -119,7 +123,7 @@ llm{
 
     concerns{
 
-        hallucination: when the model generated content that are unreallistic, fictional or completely fabricated;
+        hallucination: making things up, when the model generated content that are unreallistic, fictional or completely fabricated;
 
         factuality: truthfullness of the information;
 
@@ -142,6 +146,15 @@ llm{
     }
 
     for llm development, you only need prompt design;
+}
+
+self-supervised learning{
+
+    allows machine learning algorithms to use observed inputs to predict unknown inputs;
+    by observed input it means that the input and output label is not mentioned and the model have to itself learn it and form input and output label and make it a supervised learning;
+    
+    goal for self-supervised learning is to programmatically change unsupervised learning models into supervised learning models;
+    done by developing pre-training deep learning systems that can learn to fill in missing information;
 }
 
 prompt design vs engineering{
@@ -177,5 +190,118 @@ google ai principles for responsible ai{
         2. weapons or other technologies whose principle purpose is to cause injury to people;
         3. surveillence violating internationally accepted norms;
         4. those who contravenes international law and human rights;
+    }
+}
+
+
+coursera Andrew NG{
+
+    differnt platforms for GenAI{
+
+        chatGPT from openAI;
+        bard/gemini from Goggle;
+        bing/copilot from Microsoft;
+    }
+
+    AI already in our live{
+
+        web search;
+        fraud detection in payment and critical network connections;
+        recommendation system;
+    }
+
+    input/output length is limited in llm;
+
+    genAI currently does not work with structured data (tabular data), supervised learning is a better technique for it;
+
+    image generation{
+
+        using diffusion model with self-supervised learning;
+
+        diffusion model: breaking the data and rebuilding it, making the image noisy and then removing the noise;
+    }
+
+    using genAI in software{
+
+        using general ai model vs genAI model{
+
+            general model{
+
+                we generally use supervised learning;
+                we collect data;
+                label the data;
+                train the model;
+                deploy the model;
+            }
+
+            genAI{
+
+                we use llm api;
+                we make suitable prompt;
+                test the result and fine tune the prompt;
+                deploy the application;
+            }
+        }
+
+        methods to improve genAI result{
+
+            prompt designing;
+            RAG (Retrieval augmented generation), giving model excess to external data source, it modifies the prompt and add another level of input data in it;
+            fine tune model, in this the llm model is trained on a smaller amount of supervised data;
+            pretrain model: train LLM from scratch, very costly and can be done by big companies;
+        }
+
+        token{
+
+            words used in input and output are used to calculate no. of tokens;
+            it is then used for applying usage cost of llm;
+            typically 1 token = 3/4 of 1 word;
+        }
+
+        instruction training{
+
+            its like fine tuning the llm;
+            it this instead of predecting the next word to complete the sentence, it predicts the next word to answer the question asked;
+        }
+
+        RLHF{
+
+            reinforcement learing from human feedback;
+            helps in providing helpful,honest and harmless (aka triple H) output;
+
+            in this the output is given rewards/feedback and thus the model trains to get higher scores;
+        }
+
+        tools{
+
+            tools are like functions with pre-defined instructions;
+            as the llm can be irregular in operations involving a particular mathematical task or task which have a particular order of operations then in this case a tool can be used;
+
+            eg. calculator, placing an order, doing transaction;
+        }
+
+        agents{
+
+            its a new cutting edge technology using genAI that is still evolving;
+            agents are like a bots or programme that can perform a set instruction on the internet just like humans with addition to their own unique capabilities;
+
+            its tha basis of LAM that in being used in rabbit r1;
+        }
+
+        analysing a job for augmentation/automation using genAI{
+
+            a job consists of many smaller tasks;
+            one can analyse these tasks to determine if AI can be used in these particular tasks;
+            one can check the feaseability of AI for the task and also the business value for implementing it;
+
+            oNET has done some review/research on certain jobs for this;
+        }
+
+        AGI{
+
+            artificial general ai;
+            ai that can do any kind of intellectual tasks that human can do, basically a human persona;
+        }
+
     }
 }

@@ -91,7 +91,7 @@ venv python{
 
     python -m venv PATH       //creates a venv at the specified path
     source PATH/bin/activate       //activates the venv 
-
+bi
     deactivate      //for deactivating the venv
 
 }
@@ -134,7 +134,12 @@ django admin{
 }
 
 
--------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
 
 freeCodeCamp{
 
@@ -153,7 +158,7 @@ freeCodeCamp{
         python manage.py startapp app_name_folder
 
         command for starting the server:
-        python manage.py runserver 
+        python manage.py runserver 0.0.0.0:8000     //to start the development server on the specified address
     }
 
     url configrations{
@@ -228,11 +233,11 @@ freeCodeCamp{
             it creates the models/table structure;
             it is then reflected in the database;
             we can see that in migrations folder;
-            we can see the database in django-admin site;
         }
 
         after migration we have to register the model in admin.py to see it on admin site;
         admin.site.register(Model)
+        we can see the database in django-admin site;
 
         using models in views{
 
@@ -363,6 +368,9 @@ freeCodeCamp{
 
             it helps to validate according to the model which comes from a post request;
 
+            it is used to convert complex data types, such as Django model instances, into Python data types that can be easily rendered into JSON, XML, or other content types;
+            https://www.geeksforgeeks.org/serializers-django-rest-framework/
+
             in serializers.py{
 
                 creating a serializer for a model;
@@ -375,7 +383,7 @@ freeCodeCamp{
                 class YourModelSerializer(serializers.ModelSerializer):
                     class Meta:         
                         model = ModelName
-                        fields = ('field1','field2',)       //contains the field that will be present/required int the post request field 
+                        fields = ('field1','field2',)       //contains the field that will be present/required in the post request field 
             }
 
             in views.py{
@@ -393,6 +401,8 @@ freeCodeCamp{
                 serializer.data         //returns the model object 
 
                 serializer.errors       //return the error when serializer is not valid
+
+                YourModelSerializer(YourModel.objects.all(),many=True).data     //return all the data
 
             }
         }
